@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>Carebnb API Reference</title>
 
     <style media="screen">
       .highlight table td { padding: 5px; }
@@ -304,6 +304,25 @@
       <ul id="toc" class="toc-list-h1">
           <li>
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#access" class="toc-h2 toc-link" data-title="Access">Access</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#general" class="toc-h1 toc-link" data-title="General">General</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-property-info" class="toc-h2 toc-link" data-title="Get property info">Get property info</a>
+                  </li>
+                  <li>
+                    <a href="#get-service-info" class="toc-h2 toc-link" data-title="Get service info">Get service info</a>
+                  </li>
+                  <li>
+                    <a href="#enable-disable-service" class="toc-h2 toc-link" data-title="Enable / disable service">Enable / disable service</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#automatic-check-in-check-out" class="toc-h1 toc-link" data-title="Automatic check in check out">Automatic check in check out</a>
@@ -353,7 +372,179 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to Carebnb API! You can use our API to access Carebnb endpoints.</p>
+<p>Welcome to Carebnb API!</p>
+
+<p>The Carebnb API is organized around <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a>.
+Our API has predictable resource-oriented URLs, accepts <a href="https://en.wikipedia.org/wiki/POST_(HTTP)#Use_for_submitting_web_forms">form-encoded</a> request bodies, returns <a href="http://www.json.org/">JSON-encoded</a> responses, and uses standard HTTP response codes, authentication, and verbs.</p>
+<h2 id='access'>Access</h2>
+<p>To have access to our API, you will need partner credentials.
+These credentials are granted to hosting businesses that use our automation services.</p>
+
+<p>If you&#39;re not a partner yet, but see yourself as a good candidate, please contact us through the email <a href="mailto:host@carebnb.app">host@carebnb.app</a></p>
+<h1 id='general'>General</h1>
+<p><strong>Base URL</strong></p>
+
+<p><code>https://api.carebnb.app/api/v1</code></p>
+<h2 id='get-property-info'>Get property info</h2>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"gid"</span><span class="p">:</span><span class="s2">"q1w2e3r4-q1w2-e3r4-t5y6-u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"coverImage"</span><span class="p">:</span><span class="s2">"https://a0.muscache.com/im/pictures/3ff8e57d-59c9-4193-a6c1-c89f2be79ea2.jpg?aki_policy=medium"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"description"</span><span class="p">:</span><span class="s2">"Cozy three bedrooms apartment"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"language"</span><span class="p">:</span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"country"</span><span class="p">:</span><span class="s2">"Canada"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"countryCode"</span><span class="p">:</span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"state"</span><span class="p">:</span><span class="s2">"QC"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"city"</span><span class="p">:</span><span class="s2">"Canton-Tremblay"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"address"</span><span class="p">:</span><span class="s2">"4 Rue Marie France, Canton-Tremblay, QC G7G 4N4, Canada"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"street"</span><span class="p">:</span><span class="s2">"4 Rue Marie France"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"zipcode"</span><span class="p">:</span><span class="s2">"G7G 4N4"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"checkOutWindow"</span><span class="p">:</span><span class="s2">"11"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"checkinWindowStartAt"</span><span class="p">:</span><span class="s2">"16"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"checkinWindowEndAt"</span><span class="p">:</span><span class="s2">"16"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"isPushNotificationSended"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"location"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">30.130421</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">-81.536018</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="nl">"timeZoneName"</span><span class="p">:</span><span class="s2">"America/New_York"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="s2">"2020-07-19T01:24:19.190Z"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="s2">"2020-07-19T01:24:19.190Z"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"deletedAt"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"ownerUserGid"</span><span class="p">:</span><span class="s2">"e3r4t5y6-i8o9-w2e3-r4t5-y6u7i8o9w2e3"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"services"</span><span class="p">:[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+               </span><span class="nl">"gid"</span><span class="p">:</span><span class="s2">"9b5e910c-9c03-4696-9eac-d0b9dbe5c110"</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"stories"</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"description"</span><span class="p">:</span><span class="s2">"Smart guestbook"</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"listing"</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"protocols"</span><span class="p">:[</span><span class="w">
+                  </span><span class="s2">"reservations"</span><span class="w">
+               </span><span class="p">],</span><span class="w">
+               </span><span class="nl">"url"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="s2">"2020-07-06T18:41:54.107Z"</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="s2">"2020-07-06T18:41:54.107Z"</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"deletedAt"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"propertyService"</span><span class="p">:{</span><span class="w">
+                  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="s2">"2020-08-16T13:16:30.601Z"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="s2">"2020-08-16T13:16:30.601Z"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"propertyGid"</span><span class="p">:</span><span class="s2">"q1w2e3r4-q1w2-e3r4-t5y6-u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"serviceGid"</span><span class="p">:</span><span class="s2">"t5y6u7i8-p0q1-w2e3-r4t5-y6u7i8o9p0q1"</span><span class="w">
+               </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="err">...</span><span class="w">
+         </span><span class="p">],</span><span class="w">
+         </span><span class="nl">"user"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Demétrio Guilardi"</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+   </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Returns all info for a given property.
+It contains the address, as well as all services full info.</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Endpoint</td>
+<td>/helpers/getPropertyByUserProperty/carebnbUserId/<strong>USER_ID</strong>/carebnbPropertyId/<strong>PROPERTY_ID</strong></td>
+</tr>
+<tr>
+<td>Method</td>
+<td>GET</td>
+</tr>
+</tbody></table>
+
+<p>An authentication token must be passed to this endpoint in its request <strong>header</strong>.</p>
+
+<p><code>{
+   &quot;token&quot;:89f5u3q4p5uq43gq5uh34p895uhw34p5u34hp9guj905...
+}
+</code></p>
+<h2 id='get-service-info'>Get service info</h2>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Services by property."</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
+      </span><span class="nl">"gid"</span><span class="p">:</span><span class="s2">"q1w2e3r4-r4t5-y6u7-i8o9-p0q1w2e3r4t5y6"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="err">SERVICE_NAME</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"url"</span><span class="p">:</span><span class="err">SERVICE_SETUP_URL</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="err">SERVICE_DESCRIPTION</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"active"</span><span class="p">:</span><span class="err">SERVICE_STATUS</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Returns status along with basic info for a given service.</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Endpoint</td>
+<td>/owner/services/property/<strong>PROPERTY_ID</strong>/serviceName/<strong>SERVICE_NAME</strong></td>
+</tr>
+<tr>
+<td>Method</td>
+<td>GET</td>
+</tr>
+</tbody></table>
+<h2 id='enable-disable-service'>Enable / disable service</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"carebnbPropertyId"</span><span class="p">:</span><span class="s2">"q1w2e3r4-q1w2-e3r4-t5y6-u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"serviceName"</span><span class="p">:</span><span class="err">SERVICE_NAME</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"active"</span><span class="p">:</span><span class="err">FALSE_OR_TRUE</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Service saved."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Enables or disables a service for a given property.</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Endpoint</td>
+<td>/v1/owner/services/property</td>
+</tr>
+<tr>
+<td>Method</td>
+<td>POST</td>
+</tr>
+</tbody></table>
+
+<p>An authentication token must be passed to this endpoint in its request <strong>header</strong>.</p>
+
+<p><code>{
+   &quot;token&quot;:89f5u3q4p5uq43gq5uh34p895uhw34p5u34hp9guj905...
+}
+</code></p>
 <h1 id='automatic-check-in-check-out'>Automatic check in check out</h1>
 <p>Carebnb communicates with guests straight through Airbnb app!</p>
 
@@ -418,19 +609,17 @@ Values on the left column are replaced by values on the second one in any messag
 <p>Response</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"_id"</span><span class="p">:</span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="nl">"_id"</span><span class="p">:</span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Hi {guestName},</span><span class="se">\n\n</span><span class="s2">Thanks for choosing us.</span><span class="se">\n\n</span><span class="s2">I'm Carebnb..."</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"introduction"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"reminderPeriod"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"reminderSchedule"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"deletedAt"</span><span class="p">:</span><span class="kc">null</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="mi">201</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
+    </span><span class="nl">"_id"</span><span class="p">:</span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Hi {guestName},</span><span class="se">\n\n</span><span class="s2">Thanks for choosing us.</span><span class="se">\n\n</span><span class="s2">I'm Carebnb..."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"introduction"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"reminderPeriod"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"reminderSchedule"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"deletedAt"</span><span class="p">:</span><span class="kc">null</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Returns the introduction message for a given property.
@@ -465,14 +654,17 @@ This is the message sent to guests at the moment a new reservation is detected</
 <p>Response</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"_id"</span><span class="p">:</span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Updated message. Hi {guestName},</span><span class="se">\n\n</span><span class="s2">Thanks for choosing us.</span><span class="se">\n\n</span><span class="s2">I'm Carebnb..."</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"introduction"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"reminderPeriod"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"reminderSchedule"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"deletedAt"</span><span class="p">:</span><span class="kc">null</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="mi">201</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
+    </span><span class="nl">"_id"</span><span class="p">:</span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Updated message. Hi {guestName},</span><span class="se">\n\n</span><span class="s2">Thanks for choosing us.</span><span class="se">\n\n</span><span class="s2">I'm Carebnb..."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"introduction"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"reminderPeriod"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"reminderSchedule"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"deletedAt"</span><span class="p">:</span><span class="kc">null</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Updates the introduction message for a given property.
@@ -499,32 +691,35 @@ This is the message sent to guests at the moment a new reservation is detected</
 <blockquote>
 <p>Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"_id"</span><span class="p">:</span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"It's trash day.</span><span class="se">\n\n</span><span class="s2">Hi  {guestName}, please ..."</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"scheduled"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"reminderPeriod"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"reminderSchedule"</span><span class="p">:[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"dayOfWeek"</span><span class="p">:</span><span class="s2">"monday"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"hours"</span><span class="p">:[</span><span class="w">
-            </span><span class="s2">"20:00"</span><span class="w">
-          </span><span class="p">]</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"dayOfWeek"</span><span class="p">:</span><span class="s2">"wednesday"</span><span class="w">
-          </span><span class="nl">"hours"</span><span class="p">:[</span><span class="w">
-            </span><span class="s2">"20:00"</span><span class="w">
-          </span><span class="p">]</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"deletedAt"</span><span class="p">:</span><span class="kc">null</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="err">...</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="mi">201</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"_id"</span><span class="p">:</span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"It's trash day.</span><span class="se">\n\n</span><span class="s2">Hi  {guestName}, please ..."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"scheduled"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"reminderPeriod"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"reminderSchedule"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"dayOfWeek"</span><span class="p">:</span><span class="s2">"monday"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"hours"</span><span class="p">:[</span><span class="w">
+              </span><span class="s2">"20:00"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"dayOfWeek"</span><span class="p">:</span><span class="s2">"wednesday"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"hours"</span><span class="p">:[</span><span class="w">
+              </span><span class="s2">"20:00"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"deletedAt"</span><span class="p">:</span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Returns all scheduled messages for a given property.
 The returned messages are the ones sent to guests based on the day of the week.</p>
@@ -558,27 +753,30 @@ The returned messages are the ones sent to guests based on the day of the week.<
 <p>Response</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"_id"</span><span class="p">:</span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Updated message for {guestName}.</span><span class="se">\n\n\n</span><span class="s2">att,</span><span class="se">\n</span><span class="s2"> {hostName} ..."</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"scheduled"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"reminderPeriod"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"reminderSchedule"</span><span class="p">:[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"dayOfWeek"</span><span class="p">:</span><span class="s2">"monday"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"hours"</span><span class="p">:[</span><span class="w">
-          </span><span class="s2">"20:00"</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"dayOfWeek"</span><span class="p">:</span><span class="s2">"wednesday"</span><span class="w">
-        </span><span class="nl">"hours"</span><span class="p">:[</span><span class="w">
-          </span><span class="s2">"20:00"</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"deletedAt"</span><span class="p">:</span><span class="kc">null</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="mi">201</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
+    </span><span class="nl">"_id"</span><span class="p">:</span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Updated message for {guestName}.</span><span class="se">\n\n\n</span><span class="s2">att,</span><span class="se">\n</span><span class="s2"> {hostName} ..."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"scheduled"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"reminderPeriod"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"reminderSchedule"</span><span class="p">:[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"dayOfWeek"</span><span class="p">:</span><span class="s2">"monday"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"hours"</span><span class="p">:[</span><span class="w">
+            </span><span class="s2">"20:00"</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"dayOfWeek"</span><span class="p">:</span><span class="s2">"wednesday"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"hours"</span><span class="p">:[</span><span class="w">
+            </span><span class="s2">"20:00"</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"deletedAt"</span><span class="p">:</span><span class="kc">null</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Updates a scheduled message.
@@ -678,19 +876,22 @@ This type of message is sent to guests based on the day of the week.</p>
 <blockquote>
 <p>Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"_id"</span><span class="p">:</span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"It's trash day.</span><span class="se">\n\n</span><span class="s2">Hi  {guestName}, please ..."</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"checkin-checkout"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"reminderPeriod"</span><span class="p">:</span><span class="s2">"-P1D"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"reminderSchedule"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"deletedAt"</span><span class="p">:</span><span class="kc">null</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="err">...</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="mi">201</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"_id"</span><span class="p">:</span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"It's trash day.</span><span class="se">\n\n</span><span class="s2">Hi  {guestName}, please ..."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"checkin-checkout"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"reminderPeriod"</span><span class="p">:</span><span class="s2">"-P1D"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"reminderSchedule"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"deletedAt"</span><span class="p">:</span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Returns all check in check out messages for a given property.
 The returned messages are the ones sent to guests based on check in check out dates.</p>
@@ -725,14 +926,17 @@ The returned messages are the ones sent to guests based on check in check out da
 <p>Response</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"_id"</span><span class="p">:</span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Updated message for {guestName}.</span><span class="se">\n\n\n</span><span class="s2">att,</span><span class="se">\n</span><span class="s2"> {hostName} ..."</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"checkin"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"reminderPeriod"</span><span class="p">:</span><span class="s2">"-P1D"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"reminderSchedule"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"deletedAt"</span><span class="p">:</span><span class="kc">null</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="mi">201</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
+    </span><span class="nl">"_id"</span><span class="p">:</span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Updated message for {guestName}.</span><span class="se">\n\n\n</span><span class="s2">att,</span><span class="se">\n</span><span class="s2"> {hostName} ..."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"checkin"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"reminderPeriod"</span><span class="p">:</span><span class="s2">"-P1D"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"reminderSchedule"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"deletedAt"</span><span class="p">:</span><span class="kc">null</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Updates a check in check out based message.
