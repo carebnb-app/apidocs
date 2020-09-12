@@ -395,6 +395,64 @@
 
           </li>
           <li>
+            <a href="#carebnb-chatbot" class="toc-h1 toc-link" data-title="Carebnb Chatbot">Carebnb Chatbot</a>
+
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#faqs" class="toc-h2 toc-link" data-title="Faqs">Faqs</a>
+
+                      <ul class="toc-list-h2">
+                          <li>
+                            <a href="#get-faqs" class="toc-h3 toc-link" data-title="Get faqs">Get faqs</a>
+                          </li>
+                          <li>
+                            <a href="#create-faqs" class="toc-h3 toc-link" data-title="Create faqs">Create faqs</a>
+                          </li>
+                          <li>
+                            <a href="#update-faqs" class="toc-h3 toc-link" data-title="Update faqs">Update faqs</a>
+                          </li>
+                          <li>
+                            <a href="#delete-faqs" class="toc-h3 toc-link" data-title="Delete faqs">Delete faqs</a>
+                          </li>
+                      </ul>
+
+                  </li>
+                  <li>
+                    <a href="#rules" class="toc-h2 toc-link" data-title="Rules">Rules</a>
+
+                      <ul class="toc-list-h2">
+                          <li>
+                            <a href="#get-rules" class="toc-h3 toc-link" data-title="Get rules">Get rules</a>
+                          </li>
+                          <li>
+                            <a href="#update-rules" class="toc-h3 toc-link" data-title="Update rules">Update rules</a>
+                          </li>
+                      </ul>
+
+                  </li>
+                  <li>
+                    <a href="#places" class="toc-h2 toc-link" data-title="Places">Places</a>
+
+                      <ul class="toc-list-h2">
+                          <li>
+                            <a href="#get-places" class="toc-h3 toc-link" data-title="Get places">Get places</a>
+                          </li>
+                          <li>
+                            <a href="#create-places" class="toc-h3 toc-link" data-title="Create places">Create places</a>
+                          </li>
+                          <li>
+                            <a href="#update-places" class="toc-h3 toc-link" data-title="Update places">Update places</a>
+                          </li>
+                          <li>
+                            <a href="#delete-places" class="toc-h3 toc-link" data-title="Delete places">Delete places</a>
+                          </li>
+                      </ul>
+
+                  </li>
+              </ul>
+
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
 
 
@@ -1069,6 +1127,434 @@ This type of message is sent to guests based on check in check out date.</p>
 <tr>
 <td>Endpoint</td>
 <td>/messages/<strong>MESSAGE_ID</strong></td>
+</tr>
+<tr>
+<td>Method</td>
+<td>DELETE</td>
+</tr>
+</tbody></table>
+<h1 id='carebnb-chatbot'>Carebnb Chatbot</h1>
+<p>Carebnb Chatbot!</p>
+
+<!-- Send automatic messages based on the day of check-ins and checkouts. -->
+
+<!-- Keep your guests up to date, communicating rules and procedures in a timely manner. Up-to-date guests are more likely to follow rules. Rules being followed equals less turnover work. [know more](https://carebnb.app/services/automatic-check-in-check-out/) -->
+
+<p><strong>Base URL</strong></p>
+
+<p><code>https://api.chatbot.carebnb.app/api/v1</code></p>
+
+<p><strong>Request / response properties</strong></p>
+
+<p>Some properties expect a pre defined value.</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>PROPERTY_ID</td>
+<td>Carebnb property ID</td>
+</tr>
+</tbody></table>
+
+<p><strong>Modules</strong></p>
+
+<p>This service has the following modules</p>
+
+<table><thead>
+<tr>
+<th>Module</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Faqs</td>
+<td>Description for faqs</td>
+</tr>
+<tr>
+<td>Rules</td>
+<td>Description for rules</td>
+</tr>
+<tr>
+<td>Places</td>
+<td>Description for places</td>
+</tr>
+</tbody></table>
+<h2 id='faqs'>Faqs</h2><h3 id='get-faqs'>Get faqs</h3>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"How can I..."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Easy, you can..."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"deletedAt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>Returns all faqs for a given property.</p>
+
+<p><strong>Request</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Endpoint</td>
+<td>/chatbot/faqs/carebnbPropertyId/<strong>PROPERTY_ID</strong>/</td>
+</tr>
+<tr>
+<td>Method</td>
+<td>GET</td>
+</tr>
+</tbody></table>
+<h3 id='create-faqs'>Create faqs</h3>
+<blockquote>
+<p>Request body</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"How can I..."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"anwser"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Easy, you can..."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"carebnbPropertyId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"76e122d8-3bb7-4e0e-843c-e26fc0931534"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">201</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"How can I..."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Easy, you can..."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Adds a new faq for a given property.</p>
+
+<p><strong>Request</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Endpoint</td>
+<td>/chatbot/faqs</td>
+</tr>
+<tr>
+<td>Method</td>
+<td>POST</td>
+</tr>
+</tbody></table>
+<h3 id='update-faqs'>Update faqs</h3>
+<blockquote>
+<p>Request body</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"How can I..."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"anwser"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Easy, you can..."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"carebnbPropertyId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"76e122d8-3bb7-4e0e-843c-e26fc0931534"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Updates a specific faq</p>
+
+<p><strong>Request</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Endpoint</td>
+<td>/chatbot/faqs/<strong>FAQ_ID</strong></td>
+</tr>
+<tr>
+<td>Method</td>
+<td>PUT</td>
+</tr>
+</tbody></table>
+<h3 id='delete-faqs'>Delete faqs</h3>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Removes a specific faq</p>
+
+<p><strong>Request</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Endpoint</td>
+<td>/chatbot/faq/<strong>FAQ_ID</strong></td>
+</tr>
+<tr>
+<td>Method</td>
+<td>DELETE</td>
+</tr>
+</tbody></table>
+<h2 id='rules'>Rules</h2><h3 id='get-rules'>Get rules</h3>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"rule"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pets"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"deletedAt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"q1w2e3r4t5y8d7i8o9p0q5s1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"rule"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smoke"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"deletedAt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>Returns all rules for a given property.</p>
+
+<p>The answer for Rules can be Yes, Maybe or No</p>
+
+<p><strong>Request</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Endpoint</td>
+<td>/chatbot/rules/carebnbPropertyId/<strong>PROPERTY_ID</strong>/</td>
+</tr>
+<tr>
+<td>Method</td>
+<td>GET</td>
+</tr>
+</tbody></table>
+<h3 id='update-rules'>Update rules</h3>
+<blockquote>
+<p>Request body</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"rule"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pet"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"anwser"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Maybe"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"carebnbPropertyId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"76e122d8-3bb7-4e0e-843c-e26fc0931534"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Update a specific of rule</p>
+
+<p>The answer for Rules can be Yes, Maybe or No</p>
+
+<p><strong>Request</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Endpoint</td>
+<td>/chatbot/rules/<strong>RULE_ID</strong></td>
+</tr>
+<tr>
+<td>Method</td>
+<td>PUT</td>
+</tr>
+</tbody></table>
+<h2 id='places'>Places</h2><h3 id='get-places'>Get places</h3>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"place"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Walmart"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"distance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5 miles"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6 minutes"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"deletedAt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"q1w2e3r4t5y6u7i9o9p0q9f4"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"place"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pool"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"distance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Walking distance"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"deletedAt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>Returns all places for a given property.</p>
+
+<p><strong>Request</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Endpoint</td>
+<td>/chatbot/places/carebnbPropertyId/<strong>PROPERTY_ID</strong>/</td>
+</tr>
+<tr>
+<td>Method</td>
+<td>GET</td>
+</tr>
+</tbody></table>
+<h3 id='create-places'>Create places</h3>
+<blockquote>
+<p>Request body</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"place"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pool"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"distance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Walking distance"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"carebnbPropertyId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"76e122d8-3bb7-4e0e-843c-e26fc0931534"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">201</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"q1w2e3r4t5y6u7i9o9p0q9f4"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"place"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pool"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"distance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Walking distance"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Adds a new place for a given property.</p>
+
+<p>Distance or time is required</p>
+
+<p><strong>Request</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Endpoint</td>
+<td>/chatbot/places</td>
+</tr>
+<tr>
+<td>Method</td>
+<td>POST</td>
+</tr>
+</tbody></table>
+<h3 id='update-places'>Update places</h3>
+<blockquote>
+<p>Request body</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"place"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Walmart"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"distance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5 miles"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6 minutes"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"carebnbPropertyId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"76e122d8-3bb7-4e0e-843c-e26fc0931534"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Update a specific of place</p>
+
+<p><strong>Request</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Endpoint</td>
+<td>/chatbot/places/<strong>PLACE_ID</strong></td>
+</tr>
+<tr>
+<td>Method</td>
+<td>PUT</td>
+</tr>
+</tbody></table>
+<h3 id='delete-places'>Delete places</h3>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Remove a specific place</p>
+
+<p><strong>Request</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Endpoint</td>
+<td>/chatbot/places/<strong>PLACE_ID</strong></td>
 </tr>
 <tr>
 <td>Method</td>
