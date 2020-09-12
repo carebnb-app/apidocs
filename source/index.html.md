@@ -8,6 +8,7 @@ includes:
   - introduction
   - general
   - messages
+  - chatbot
   - errors
 
 search: true
