@@ -37,7 +37,7 @@ Placeholder | Description
 
 ## Introduction message
 
-### Get (GET)
+### Get
 
 > Response
 
@@ -71,7 +71,7 @@ Method   | GET
 
 
 
-### Update (PUT)
+### Update
 
 > Request body
 
@@ -119,7 +119,7 @@ This message can't be deleted.
 
 ## Scheduled messages
 
-### Get (GET)
+### Get
 
 > Response
 
@@ -169,7 +169,7 @@ Method   | GET
 
 
 
-### Update (PUT)
+### Update
 
 > Request body
 
@@ -226,7 +226,7 @@ Method   | PUT
 
 
 
-### Add (POST)
+### Create
 
 > Request body
 
@@ -274,7 +274,7 @@ Method   | POST
 
 
 
-### Delete (DELETE)
+### Delete
 
 > Response
 
@@ -300,7 +300,7 @@ Method   | DELETE
 
 ## Check in check out messages
 
-### Get (GET)
+### Get
 
 > Response
 
@@ -337,7 +337,7 @@ Method   | GET
 
 
 
-### Update (PUT)
+### Update
 
 > Request body
 
@@ -382,7 +382,7 @@ Method   | PUT
 
 
 
-### Add (POST)
+### Create
 
 > Request body
 
@@ -417,7 +417,7 @@ Method   | POST
 
 
 
-### Delete (DELETE)
+### Delete
 
 > Response
 
