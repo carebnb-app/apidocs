@@ -32,25 +32,26 @@ Placeholder | Description
 {hostName} | Host's full name
 
 
+
+
+
 ## Get introduction message
 
 > Response
 
 ```json
 {
-  "_id":"q1w2e3r4t5y6u7i8o9p0q1w2",
-  "createdAt":"2020-01-01T00:00:00.000Z",
-  "updatedAt":"2020-01-01T00:00:00.000Z",
-}
-{
-  "_id":"q1w2e3r4t5y6u7i8o9p0q1w2",
-  "message":"Hi {guestName},\n\nThanks for choosing us.\n\nI'm Carebnb...",
-  "event":"introduction",
-  "reminderPeriod":null,
-  "reminderSchedule":null,
-  "createdAt":"2020-01-01T00:00:00.000Z",
-  "updatedAt":"2020-01-01T00:00:00.000Z",
-  "deletedAt":null
+  "statusCode":201,
+  "data":{
+    "_id":"q1w2e3r4t5y6u7i8o9p0q1w2",
+    "message":"Hi {guestName},\n\nThanks for choosing us.\n\nI'm Carebnb...",
+    "event":"introduction",
+    "reminderPeriod":null,
+    "reminderSchedule":null,
+    "createdAt":"2020-01-01T00:00:00.000Z",
+    "updatedAt":"2020-01-01T00:00:00.000Z",
+    "deletedAt":null
+  }
 }
 ```
 
@@ -82,14 +83,17 @@ Method   | GET
 
 ```json
 {
-  "_id":"q1w2e3r4t5y6u7i8o9p0q1w2",
-  "message":"Updated message. Hi {guestName},\n\nThanks for choosing us.\n\nI'm Carebnb...",
-  "event":"introduction",
-  "reminderPeriod":null,
-  "reminderSchedule":null,
-  "createdAt":"2020-01-01T00:00:00.000Z",
-  "updatedAt":"2020-01-01T00:00:00.000Z",
-  "deletedAt":null
+  "statusCode":201,
+  "data":{
+    "_id":"q1w2e3r4t5y6u7i8o9p0q1w2",
+    "message":"Updated message. Hi {guestName},\n\nThanks for choosing us.\n\nI'm Carebnb...",
+    "event":"introduction",
+    "reminderPeriod":null,
+    "reminderSchedule":null,
+    "createdAt":"2020-01-01T00:00:00.000Z",
+    "updatedAt":"2020-01-01T00:00:00.000Z",
+    "deletedAt":null
+  }
 }
 ```
 
@@ -112,32 +116,35 @@ This message can't be deleted.
 > Response
 
 ```json
-[
-  {
-    "_id":"q1w2e3r4t5y6u7i8o9p0q1w2",
-    "message":"It's trash day.\n\nHi  {guestName}, please ...",
-    "event":"scheduled",
-    "reminderPeriod":null,
-    "reminderSchedule":[
-      {
-          "dayOfWeek":"monday",
-          "hours":[
-            "20:00"
-          ]
-      },
-      {
-          "dayOfWeek":"wednesday"
-          "hours":[
-            "20:00"
-          ]
-      }
-    ],
-    "createdAt":"2020-01-01T00:00:00.000Z",
-    "updatedAt":"2020-01-01T00:00:00.000Z",
-    "deletedAt":null
-  },
-  ...
-]
+{
+  "statusCode":201,
+  "data":[
+    {
+      "_id":"q1w2e3r4t5y6u7i8o9p0q1w2",
+      "message":"It's trash day.\n\nHi  {guestName}, please ...",
+      "event":"scheduled",
+      "reminderPeriod":null,
+      "reminderSchedule":[
+        {
+            "dayOfWeek":"monday",
+            "hours":[
+              "20:00"
+            ]
+        },
+        {
+            "dayOfWeek":"wednesday",
+            "hours":[
+              "20:00"
+            ]
+        }
+      ],
+      "createdAt":"2020-01-01T00:00:00.000Z",
+      "updatedAt":"2020-01-01T00:00:00.000Z",
+      "deletedAt":null
+    },
+    ...
+  ]
+}
 ```
 
 Returns all scheduled messages for a given property.
@@ -170,27 +177,30 @@ Method   | GET
 
 ```json
 {
-  "_id":"q1w2e3r4t5y6u7i8o9p0q1w2",
-  "message":"Updated message for {guestName}.\n\n\natt,\n {hostName} ...",
-  "event": "scheduled",
-  "reminderPeriod":null,
-  "reminderSchedule":[
-    {
-        "dayOfWeek":"monday",
-        "hours":[
-          "20:00"
-        ]
-    },
-    {
-        "dayOfWeek":"wednesday"
-        "hours":[
-          "20:00"
-        ]
-    }
-  ],
-  "createdAt":"2020-01-01T00:00:00.000Z",
-  "updatedAt":"2020-01-01T00:00:00.000Z",
-  "deletedAt":null
+  "statusCode":201,
+  "data":{
+    "_id":"q1w2e3r4t5y6u7i8o9p0q1w2",
+    "message":"Updated message for {guestName}.\n\n\natt,\n {hostName} ...",
+    "event": "scheduled",
+    "reminderPeriod":null,
+    "reminderSchedule":[
+      {
+          "dayOfWeek":"monday",
+          "hours":[
+            "20:00"
+          ]
+      },
+      {
+          "dayOfWeek":"wednesday",
+          "hours":[
+            "20:00"
+          ]
+      }
+    ],
+    "createdAt":"2020-01-01T00:00:00.000Z",
+    "updatedAt":"2020-01-01T00:00:00.000Z",
+    "deletedAt":null
+  }
 }
 ```
 
@@ -285,19 +295,22 @@ Method   | DELETE
 > Response
 
 ```json
-[
-  {
-    "_id":"q1w2e3r4t5y6u7i8o9p0q1w2",
-    "message":"It's trash day.\n\nHi  {guestName}, please ...",
-    "event":"checkin-checkout",
-    "reminderPeriod":"-P1D",
-    "reminderSchedule":null,
-    "createdAt":"2020-01-01T00:00:00.000Z",
-    "updatedAt":"2020-01-01T00:00:00.000Z",
-    "deletedAt":null
-  },
-  ...
-]
+{
+  "statusCode":201,
+  "data":[
+    {
+      "_id":"q1w2e3r4t5y6u7i8o9p0q1w2",
+      "message":"It's trash day.\n\nHi  {guestName}, please ...",
+      "event":"checkin-checkout",
+      "reminderPeriod":"-P1D",
+      "reminderSchedule":null,
+      "createdAt":"2020-01-01T00:00:00.000Z",
+      "updatedAt":"2020-01-01T00:00:00.000Z",
+      "deletedAt":null
+    },
+    ...
+  ]
+}
 ```
 
 Returns all check in check out messages for a given property.
@@ -331,14 +344,17 @@ Method   | GET
 
 ```json
 {
-  "_id":"q1w2e3r4t5y6u7i8o9p0q1w2",
-  "message":"Updated message for {guestName}.\n\n\natt,\n {hostName} ...",
-  "event":"checkin",
-  "reminderPeriod":"-P1D",
-  "reminderSchedule":null,
-  "createdAt":"2020-01-01T00:00:00.000Z",
-  "updatedAt":"2020-01-01T00:00:00.000Z",
-  "deletedAt":null
+  "statusCode":201,
+  "data":{
+    "_id":"q1w2e3r4t5y6u7i8o9p0q1w2",
+    "message":"Updated message for {guestName}.\n\n\natt,\n {hostName} ...",
+    "event":"checkin",
+    "reminderPeriod":"-P1D",
+    "reminderSchedule":null,
+    "createdAt":"2020-01-01T00:00:00.000Z",
+    "updatedAt":"2020-01-01T00:00:00.000Z",
+    "deletedAt":null
+  }
 }
 ```
 
