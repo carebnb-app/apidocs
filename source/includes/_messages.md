@@ -35,7 +35,9 @@ Placeholder | Description
 
 
 
-## Get introduction message
+## Introduction message
+
+### Get (GET)
 
 > Response
 
@@ -58,6 +60,8 @@ Placeholder | Description
 Returns the introduction message for a given property.
 This is the message sent to guests at the moment a new reservation is detected
 
+**Request**
+
 Property | Value
 -------- | -------
 Endpoint | /messages/carebnbPropertyId/**PROPERTY_ID**/event/introduction
@@ -67,7 +71,7 @@ Method   | GET
 
 
 
-## Update introduction message
+### Update (PUT)
 
 > Request body
 
@@ -100,6 +104,8 @@ Method   | GET
 Updates the introduction message for a given property.
 This is the message sent to guests at the moment a new reservation is detected
 
+**Request**
+
 Property | Value
 -------- | -------
 Endpoint | /messages/**MESSAGE_ID**
@@ -111,7 +117,9 @@ This message can't be deleted.
 
 
 
-## Get scheduled messages
+## Scheduled messages
+
+### Get (GET)
 
 > Response
 
@@ -150,7 +158,7 @@ This message can't be deleted.
 Returns all scheduled messages for a given property.
 The returned messages are the ones sent to guests based on the day of the week.
 
-### Request
+**Request**
 
 Property | Value
 -------- | -------
@@ -161,7 +169,7 @@ Method   | GET
 
 
 
-## Update scheduled message
+### Update (PUT)
 
 > Request body
 
@@ -207,7 +215,7 @@ Method   | GET
 Updates a scheduled message.
 This type of message is sent to guests based on the day of the week.
 
-### Request
+**Request**
 
 Property | Value
 -------- | -------
@@ -218,7 +226,7 @@ Method   | PUT
 
 
 
-## Add scheduled message
+### Add (POST)
 
 > Request body
 
@@ -255,7 +263,7 @@ Method   | PUT
 Adds a new scheduled message.
 This type of message is sent to guests based on the day of the week.
 
-### Request
+**Request**
 
 Property | Value
 -------- | -------
@@ -266,7 +274,7 @@ Method   | POST
 
 
 
-## Delete scheduled message
+### Delete (DELETE)
 
 > Response
 
@@ -279,7 +287,7 @@ Method   | POST
 Removes a scheduled message.
 This type of message is sent to guests based on the day of the week.
 
-### Request
+**Request**
 
 Property | Value
 -------- | -------
@@ -290,7 +298,9 @@ Method   | DELETE
 
 
 
-## Get check in check out messages
+## Check in check out messages
+
+### Get (GET)
 
 > Response
 
@@ -316,7 +326,7 @@ Method   | DELETE
 Returns all check in check out messages for a given property.
 The returned messages are the ones sent to guests based on check in check out dates.
 
-### Request
+**Request**
 
 Property | Value
 -------- | -------
@@ -327,7 +337,7 @@ Method   | GET
 
 
 
-## Update check in check out message
+### Update (PUT)
 
 > Request body
 
@@ -361,7 +371,7 @@ Method   | GET
 Updates a check in check out based message.
 This type of message is sent to guests based on check in check out date.
 
-### Request
+**Request**
 
 Property | Value
 -------- | -------
@@ -372,7 +382,7 @@ Method   | PUT
 
 
 
-## Add check in check out message
+### Add (POST)
 
 > Request body
 
@@ -396,7 +406,7 @@ Method   | PUT
 Adds a new check in check out message.
 This type of message is sent to guests based on check in check out date.
 
-### Request
+**Request**
 
 Property | Value
 -------- | -------
@@ -407,7 +417,7 @@ Method   | POST
 
 
 
-## Delete check in check out message
+### Delete (DELETE)
 
 > Response
 
@@ -420,7 +430,7 @@ Method   | POST
 Removes a check in check out message.
 This type of message is sent to guests based on check in check out date.
 
-### Request
+**Request**
 
 Property | Value
 -------- | -------
