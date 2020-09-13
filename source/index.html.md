@@ -10,6 +10,8 @@ includes:
   - management
   - messages
   - chatbot
+  - infoboard
+  - lab
   - errors
 
 search: true
