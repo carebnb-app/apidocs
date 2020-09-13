@@ -4,7 +4,6 @@ Carebnb displays personalized messages straight through our smart info board.
 
 Keep your guests up to date, communicating rules and procedures in a timely manner. Up-to-date guests are more likely to follow rules. Rules being followed equals less turnover work. 
 This e-ink display, with no backlight, will never disturb guests.
-<!-- [know more](https://carebnb.app/services/automatic-check-in-check-out/) -->
 
 This part of the API is pretty much like our "**Automatic check in check out**" API.
 The main difference is the limits of the messages.
