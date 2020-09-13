@@ -6,7 +6,8 @@ toc_footers:
 
 includes:
   - introduction
-  - general
+  # - general
+  - management
   - messages
   - chatbot
   - errors
