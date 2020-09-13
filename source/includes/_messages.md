@@ -17,6 +17,7 @@ Some properties expect a pre defined value.
 Property | Description
 -------- | -------
 API_KEY | An exclusive API key generated for each partner
+USER_ID | The user ID registered on Carebnb. Normally is a host
 PROPERTY_ID | The property ID registered on Carebnb
 EVENT_TYPE | "introduction", "scheduled", "checkin" or "checkout"
 REMINDER_PERIOD | ... "-P2D", "-P1D", "P0D", "P1D", "P2D" ...
@@ -67,7 +68,8 @@ Method   | GET
 
 Property    | Value
 ----------- | -------
-api-key     | **API_KEY**
+api-key | **API_KEY**
+user-id | **USER_ID**
 property-id | **PROPERTY_ID**
 
 
@@ -114,7 +116,8 @@ Method   | PUT
 
 Property    | Value
 ----------- | -------
-api-key     | **API_KEY**
+api-key | **API_KEY**
+user-id | **USER_ID**
 property-id | **PROPERTY_ID**
 
 This type of message can't be deleted.
@@ -159,6 +162,14 @@ Property | Value
 -------- | -------
 Endpoint | /messages/event/scheduled
 Method   | GET
+
+**Request Headers**
+
+Property    | Value
+----------- | -------
+api-key | **API_KEY**
+user-id | **USER_ID**
+property-id | **PROPERTY_ID**
 
 
 
@@ -205,7 +216,8 @@ Method   | POST
 
 Property    | Value
 ----------- | -------
-api-key     | **API_KEY**
+api-key | **API_KEY**
+user-id | **USER_ID**
 property-id | **PROPERTY_ID**
 
 
@@ -268,7 +280,8 @@ Method   | PUT
 
 Property    | Value
 ----------- | -------
-api-key     | **API_KEY**
+api-key | **API_KEY**
+user-id | **USER_ID**
 property-id | **PROPERTY_ID**
 
 
@@ -299,7 +312,8 @@ Method   | DELETE
 
 Property    | Value
 ----------- | -------
-api-key     | **API_KEY**
+api-key | **API_KEY**
+user-id | **USER_ID**
 property-id | **PROPERTY_ID**
 
 
@@ -340,7 +354,8 @@ Method   | GET
 
 Property    | Value
 ----------- | -------
-api-key     | **API_KEY**
+api-key | **API_KEY**
+user-id | **USER_ID**
 property-id | **PROPERTY_ID**
 
 
@@ -381,7 +396,8 @@ Method   | POST
 
 Property    | Value
 ----------- | -------
-api-key     | **API_KEY**
+api-key | **API_KEY**
+user-id | **USER_ID**
 property-id | **PROPERTY_ID**
 
 
@@ -430,7 +446,8 @@ Method   | PUT
 
 Property    | Value
 ----------- | -------
-api-key     | **API_KEY**
+api-key | **API_KEY**
+user-id | **USER_ID**
 property-id | **PROPERTY_ID**
 
 
@@ -461,5 +478,6 @@ Method   | DELETE
 
 Property    | Value
 ----------- | -------
-api-key     | **API_KEY**
+api-key | **API_KEY**
+user-id | **USER_ID**
 property-id | **PROPERTY_ID**
