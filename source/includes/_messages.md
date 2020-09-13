@@ -119,6 +119,7 @@ Property    | Value
 api-key | **API_KEY**
 user-id | **USER_ID**
 property-id | **PROPERTY_ID**
+Content-Type | application/json
 
 This type of message can't be deleted.
 
@@ -219,6 +220,7 @@ Property    | Value
 api-key | **API_KEY**
 user-id | **USER_ID**
 property-id | **PROPERTY_ID**
+Content-Type | application/json
 
 
 
@@ -283,6 +285,7 @@ Property    | Value
 api-key | **API_KEY**
 user-id | **USER_ID**
 property-id | **PROPERTY_ID**
+Content-Type | application/json
 
 
 
@@ -399,6 +402,7 @@ Property    | Value
 api-key | **API_KEY**
 user-id | **USER_ID**
 property-id | **PROPERTY_ID**
+Content-Type | application/json
 
 
 
@@ -449,6 +453,7 @@ Property    | Value
 api-key | **API_KEY**
 user-id | **USER_ID**
 property-id | **PROPERTY_ID**
+Content-Type | application/json
 
 
 

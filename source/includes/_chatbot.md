@@ -99,6 +99,7 @@ Property    | Value
 ----------- | -------
 api-key     | **API_KEY**
 property-id | **PROPERTY_ID**
+Content-Type | application/json
 
 
 
@@ -145,6 +146,7 @@ Property    | Value
 ----------- | -------
 api-key     | **API_KEY**
 property-id | **PROPERTY_ID**
+Content-Type | application/json
 
 
 
@@ -250,6 +252,7 @@ Property    | Value
 ----------- | -------
 api-key     | **API_KEY**
 property-id | **PROPERTY_ID**
+Content-Type | application/json
 
 
 
@@ -333,6 +336,7 @@ Property    | Value
 ----------- | -------
 api-key     | **API_KEY**
 property-id | **PROPERTY_ID**
+Content-Type | application/json
 
 
 
@@ -373,6 +377,7 @@ Property    | Value
 ----------- | -------
 api-key     | **API_KEY**
 property-id | **PROPERTY_ID**
+Content-Type | application/json
 
 
 
