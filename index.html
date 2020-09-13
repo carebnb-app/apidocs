@@ -311,6 +311,19 @@
 
 
                   </li>
+                  <li>
+                    <a href="#lifecycle" class="toc-h2 toc-link" data-title="Lifecycle">Lifecycle</a>
+
+                      <ul class="toc-list-h2">
+                          <li>
+                            <a href="#event-detection-carebnb-triggering" class="toc-h3 toc-link" data-title="Event detection / Carebnb triggering">Event detection / Carebnb triggering</a>
+                          </li>
+                          <li>
+                            <a href="#carebnb-calls-callbacks" class="toc-h3 toc-link" data-title="Carebnb calls callbacks">Carebnb calls callbacks</a>
+                          </li>
+                      </ul>
+
+                  </li>
               </ul>
 
           </li>
@@ -507,6 +520,66 @@ Our API has predictable resource-oriented URLs, accepts <a href="https://en.wiki
 These credentials are granted to hosting businesses that use our automation services.</p>
 
 <p>If you&#39;re not a partner yet, but see yourself as a good candidate, please contact us through the email <a href="mailto:host@carebnb.app">host@carebnb.app</a></p>
+<h2 id='lifecycle'>Lifecycle</h2>
+<p>We integrate with each of our clients and partners uniquely.
+Our team of experts knows each system has its particularity.
+We can mold events triggering and callback calls,
+depending on each integrated system,
+to better attend to our clients and partners specific needs.</p>
+
+<p>Our system is pluggable to an already existing system in two different ways:</p>
+
+<ul>
+<li>Subscribe to Kafka topics (preferable);</li>
+<li>Call rest API callbacks.</li>
+</ul>
+<h3 id='event-detection-carebnb-triggering'>Event detection / Carebnb triggering</h3>
+<p>Carebnb relies on 5 different inputs.
+Our clients and partners must trigger them all.</p>
+
+<ol>
+<li>New reservation occurs.</li>
+<li>A reservation is updated.</li>
+<li>A reservation is cancelled.</li>
+<li>A guest sends a message to a host.</li>
+<li>A host sends a message to a guest.</li>
+</ol>
+
+<aside class="notice">
+  Any of these events must be triggered from the client or partner side.
+</aside>
+<h3 id='carebnb-calls-callbacks'>Carebnb calls callbacks</h3>
+<p>After any of these events triggers carebnb,
+our system will immediately returns a response saying it received and validated the call.
+The real return, with relevant response data is given by each of our services individually.</p>
+
+<p>For example, let&#39;s consider one of our clients or partners got a new reservation from one of its hosts...</p>
+
+<ol>
+<li>Guest books a place
+
+<ul>
+<li>If is from a partner, their 3rd party system triggers Carebnb, passing a json object with the reservation details.</li>
+<li>If is from a client, Airbnb triggers Carebnb directly.</li>
+</ul></li>
+<li>Carebnb detects what services that specific property is set to work with. Lets say it uses &quot;<strong>Automatic check in check out</strong>&quot; and &quot;<strong>Custom access codes</strong>&quot; services.</li>
+<li>Each Carebnb service handle this new reservation.
+
+<ul>
+<li><strong>Automatic check in check out</strong> sends o introduction message right away.</li>
+<li><strong>Custom access codes</strong> creates temporary access codes and send them to the guest.</li>
+</ul></li>
+<li>Each Carebnb service sends callback feedbacks.
+
+<ul>
+<li>If is to a partner, will call a rest API or write to a Kafka topic.</li>
+<li>If is to a client, will email and report to our report solution.</li>
+</ul></li>
+</ol>
+
+<aside class="notice">
+  Summary: Carebnb is triggered by your 3rd party system, and returns to a rest API or Kafka topic afterwards. 
+</aside>
 <h1 id='basic-management'>Basic Management</h1>
 <p>As a partner, you need manners to manage hosts and properties (listings) under your umbrella.
 In this section, We describe all endpoints for this mean.</p>
