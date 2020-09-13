@@ -1,36 +1,32 @@
-# Carebnb Chatbot
+# Smart chatbot agent
 
-Carebnb Chatbot!
+Our artificially intelligent chatbot answers common questions, as well as learns as it goes.
 
-<!-- Send automatic messages based on the day of check-ins and checkouts. -->
-
-<!-- Keep your guests up to date, communicating rules and procedures in a timely manner. Up-to-date guests are more likely to follow rules. Rules being followed equals less turnover work. [know more](https://carebnb.app/services/automatic-check-in-check-out/) -->
+Don't let your guests wait, be always polite and communicate with efficiency.
+[know more](https://carebnb.app/services/smart-chatbot-agent/)
 
 **Base URL**
 
-<code>https://api.chatbot.carebnb.app/api/v1</code>
+<code>https://api.chatbot.carebnb.app/v1</code>
 
 **Request / response properties**
 
 Some properties expect a pre defined value.
 
-| Property    | Description         |
-| ----------- | ------------------- |
-| PROPERTY_ID | Carebnb property ID |
+Property | Description
+-------- | -------
+API_KEY | An exclusive API key generated for each partner
+PROPERTY_ID | The property ID registered on Carebnb
+RULE | A list of all rules is retrieved by "Get all" in "Rouse rules" section
+RULE_ANSWER | "no", "yes" or "maybe"
 
-**Modules**
 
-This service has the following modules
 
-| Module | Description            |
-| ------ | ---------------------- |
-| Faqs   | Description for faqs   |
-| Rules  | Description for rules  |
-| Places | Description for places |
 
-## Faqs
 
-### Get faqs
+## Frequently answered questions
+
+### Get all
 
 > Response
 
@@ -38,34 +34,40 @@ This service has the following modules
 [
   {
     "_id": "q1w2e3r4t5y6u7i8o9p0q1w2",
-    "question": "How can I...",
-    "answer": "Easy, you can...",
-    "createdAt": "2020-01-01T00:00:00.000Z",
-    "updatedAt": "2020-01-01T00:00:00.000Z",
-    "deletedAt": null
-  },
-  ...
+    "question": "How can I...?",
+    "answer": "Easy, you can just..."
+  }
 ]
 ```
 
-Returns all faqs for a given property.
+Returns all frequently asked questions for a given property.
 
 **Request**
 
-| Property | Value                                            |
-| -------- | ------------------------------------------------ |
-| Endpoint | /chatbot/faqs/carebnbPropertyId/**PROPERTY_ID**/ |
-| Method   | GET                                              |
+Property | Value
+-------- | -------
+Endpoint | /faqs
+Method   | GET
 
-### Create faqs
+**Request Headers**
+
+Property    | Value
+----------- | -------
+api-key     | **API_KEY**
+property-id | **PROPERTY_ID**
+
+
+
+
+
+### Create
 
 > Request body
 
 ```json
 {
-  "question": "How can I...",
-  "anwser": "Easy, you can...",
-  "carebnbPropertyId": "76e122d8-3bb7-4e0e-843c-e26fc0931534"
+  "question": "How can I...?",
+  "answer": "Easy, you can just..."
 }
 ```
 
@@ -76,33 +78,79 @@ Returns all faqs for a given property.
   "statusCode": 201,
   "data": {
     "_id": "q1w2e3r4t5y6u7i8o9p0q1w2",
-    "question": "How can I...",
-    "answer": "Easy, you can...",
-    "createdAt": "2020-01-01T00:00:00.000Z"
+    "question": "How can I...?",
+    "answer": "Easy, you can just..."
   }
 }
 ```
 
-Adds a new faq for a given property.
+Adds a new frequently asked question for a given property.
 
 **Request**
 
-| Property | Value         |
-| -------- | ------------- |
-| Endpoint | /chatbot/faqs |
-| Method   | POST          |
+Property | Value
+-------- | -------
+Endpoint | /faq
+Method   | POST
 
-### Update faqs
+**Request Headers**
+
+Property    | Value
+----------- | -------
+api-key     | **API_KEY**
+property-id | **PROPERTY_ID**
+
+
+
+
+
+### Update
 
 > Request body
 
 ```json
 {
-  "question": "How can I...",
-  "anwser": "Easy, you can...",
-  "carebnbPropertyId": "76e122d8-3bb7-4e0e-843c-e26fc0931534"
+  "question": "How can I...?",
+  "answer": "Easy, you can just..."
 }
 ```
+
+> Response
+
+```json
+{
+  "statusCode":200,
+  "data":{
+    "_id": "q1w2e3r4t5y6u7i8o9p0q1w2",
+    "question": "How can I...?",
+    "answer": "Easy, you can just...",
+    "createdAt":"2020-01-01T00:00:00.000Z",
+    "updatedAt":"2020-01-01T00:00:00.000Z"
+  }
+}
+```
+
+Updates a frequently asked question for a given property.
+
+**Request**
+
+Property | Value
+-------- | -------
+Endpoint | /faq/faqId/**FAQ_ID**
+Method   | PUT
+
+**Request Headers**
+
+Property    | Value
+----------- | -------
+api-key     | **API_KEY**
+property-id | **PROPERTY_ID**
+
+
+
+
+
+### Delete
 
 > Response
 
@@ -112,37 +160,29 @@ Adds a new faq for a given property.
 }
 ```
 
-Updates a specific faq
+Removes a frequently asked question for a given property.
 
 **Request**
 
-| Property | Value                    |
-| -------- | ------------------------ |
-| Endpoint | /chatbot/faqs/**FAQ_ID** |
-| Method   | PUT                      |
+Property | Value
+-------- | -------
+Endpoint | /faq/faqId/**FAQ_ID**
+Method   | DELETE
 
-### Delete faqs
+**Request Headers**
 
-> Response
+Property    | Value
+----------- | -------
+api-key     | **API_KEY**
+property-id | **PROPERTY_ID**
 
-```json
-{
-  "statusCode": 200
-}
-```
 
-Removes a specific faq
 
-**Request**
 
-| Property | Value                   |
-| -------- | ----------------------- |
-| Endpoint | /chatbot/faq/**FAQ_ID** |
-| Method   | DELETE                  |
 
-## Rules
+## House rules
 
-### Get rules
+### Get all
 
 > Response
 
@@ -150,44 +190,40 @@ Removes a specific faq
 [
   {
     "_id": "q1w2e3r4t5y6u7i8o9p0q1w2",
-    "rule": "Pets",
-    "answer": "Yes",
-    "createdAt": "2020-01-01T00:00:00.000Z",
-    "updatedAt": "2020-01-01T00:00:00.000Z",
-    "deletedAt": null
-  },
-  {
-    "_id": "q1w2e3r4t5y8d7i8o9p0q5s1",
-    "rule": "Smoke",
-    "answer": "No",
-    "createdAt": "2020-01-01T00:00:00.000Z",
-    "updatedAt": "2020-01-01T00:00:00.000Z",
-    "deletedAt": null
-  },
-  ...
+    "rule": RULE,
+    "answer": RULE_ANSWER
+  }
 ]
 ```
 
-Returns all rules for a given property.
-
-The answer for Rules can be Yes, Maybe or No
+Returns all house rules for a given property.
 
 **Request**
 
-| Property | Value                                             |
-| -------- | ------------------------------------------------- |
-| Endpoint | /chatbot/rules/carebnbPropertyId/**PROPERTY_ID**/ |
-| Method   | GET                                               |
+Property | Value
+-------- | -------
+Endpoint | /rules
+Method   | GET
 
-### Update rules
+**Request Headers**
+
+Property    | Value
+----------- | -------
+api-key     | **API_KEY**
+property-id | **PROPERTY_ID**
+
+
+
+
+
+### Update
 
 > Request body
 
 ```json
 {
-  "rule": "Pet",
-  "anwser": "Maybe",
-  "carebnbPropertyId": "76e122d8-3bb7-4e0e-843c-e26fc0931534"
+  "rule": RULE,
+  "answer": RULE_ANSWER
 }
 ```
 
@@ -199,20 +235,29 @@ The answer for Rules can be Yes, Maybe or No
 }
 ```
 
-Update a specific of rule
-
-The answer for Rules can be Yes, Maybe or No
+Updates a house rule for a given property.
 
 **Request**
 
-| Property | Value                      |
-| -------- | -------------------------- |
-| Endpoint | /chatbot/rules/**RULE_ID** |
-| Method   | PUT                        |
+Property | Value
+-------- | -------
+Endpoint | /rule/ruleId/**RULE_ID**
+Method   | PUT
 
-## Places
+**Request Headers**
 
-### Get places
+Property    | Value
+----------- | -------
+api-key     | **API_KEY**
+property-id | **PROPERTY_ID**
+
+
+
+
+
+## Nearby places
+
+### Get all
 
 > Response
 
@@ -222,34 +267,32 @@ The answer for Rules can be Yes, Maybe or No
     "_id": "q1w2e3r4t5y6u7i8o9p0q1w2",
     "place": "Walmart",
     "distance": "5 miles",
-    "time": "6 minutes",
-    "createdAt": "2020-01-01T00:00:00.000Z",
-    "updatedAt": "2020-01-01T00:00:00.000Z",
-    "deletedAt": null
-  },
-  {
-    "_id": "q1w2e3r4t5y6u7i9o9p0q9f4",
-    "place": "Pool",
-    "distance": "Walking distance",
-    "time": "",
-    "createdAt": "2020-01-01T00:00:00.000Z",
-    "updatedAt": "2020-01-01T00:00:00.000Z",
-    "deletedAt": null
-  },
-  ...
+    "time": "6 minutes"
+  }
 ]
 ```
 
-Returns all places for a given property.
+Returns all nearby places for a given property.
 
 **Request**
 
-| Property | Value                                              |
-| -------- | -------------------------------------------------- |
-| Endpoint | /chatbot/places/carebnbPropertyId/**PROPERTY_ID**/ |
-| Method   | GET                                                |
+Property | Value
+-------- | -------
+Endpoint | /places
+Method   | GET
 
-### Create places
+**Request Headers**
+
+Property    | Value
+----------- | -------
+api-key     | **API_KEY**
+property-id | **PROPERTY_ID**
+
+
+
+
+
+### Create
 
 > Request body
 
@@ -257,8 +300,7 @@ Returns all places for a given property.
 {
   "place": "Pool",
   "distance": "Walking distance",
-  "time": "",
-  "carebnbPropertyId": "76e122d8-3bb7-4e0e-843c-e26fc0931534"
+  "time": "2 minutes"
 }
 ```
 
@@ -266,29 +308,37 @@ Returns all places for a given property.
 
 ```json
 {
-  "statusCode": 201,
+  "statusCode": 200,
   "data": {
     "_id": "q1w2e3r4t5y6u7i9o9p0q9f4",
     "place": "Pool",
     "distance": "Walking distance",
-    "time": "",
-    "createdAt": "2020-01-01T00:00:00.000Z"
+    "time": "2 minutes"
   }
 }
 ```
 
-Adds a new place for a given property.
-
-Distance or time is required
+Adds a new nearby place for a given property.
 
 **Request**
 
-| Property | Value           |
-| -------- | --------------- |
-| Endpoint | /chatbot/places |
-| Method   | POST            |
+Property | Value
+-------- | -------
+Endpoint | /place
+Method   | POST
 
-### Update places
+**Request Headers**
+
+Property    | Value
+----------- | -------
+api-key     | **API_KEY**
+property-id | **PROPERTY_ID**
+
+
+
+
+
+### Update
 
 > Request body
 
@@ -296,8 +346,7 @@ Distance or time is required
 {
   "place": "Walmart",
   "distance": "5 miles",
-  "time": "6 minutes",
-  "carebnbPropertyId": "76e122d8-3bb7-4e0e-843c-e26fc0931534"
+  "time": "6 minutes"
 }
 ```
 
@@ -309,16 +358,27 @@ Distance or time is required
 }
 ```
 
-Update a specific of place
+Updates a nearby palce for a given property.
 
 **Request**
 
-| Property | Value                        |
-| -------- | ---------------------------- |
-| Endpoint | /chatbot/places/**PLACE_ID** |
-| Method   | PUT                          |
+Property | Value
+-------- | -------
+Endpoint | /place/placeId/**PLACE_ID**
+Method   | PUT
 
-### Delete places
+**Request Headers**
+
+Property    | Value
+----------- | -------
+api-key     | **API_KEY**
+property-id | **PROPERTY_ID**
+
+
+
+
+
+### Delete
 
 > Response
 
@@ -328,11 +388,18 @@ Update a specific of place
 }
 ```
 
-Remove a specific place
+Removes a nearby place for a given property.
 
 **Request**
 
-| Property | Value                        |
-| -------- | ---------------------------- |
-| Endpoint | /chatbot/places/**PLACE_ID** |
-| Method   | DELETE                       |
+Property | Value
+-------- | -------
+Endpoint | /place/placeId/**PLACE_ID**
+Method   | DELETE
+
+**Request Headers**
+
+Property    | Value
+----------- | -------
+api-key     | **API_KEY**
+property-id | **PROPERTY_ID**

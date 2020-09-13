@@ -8,7 +8,7 @@ Keep your guests up to date, communicating rules and procedures in a timely mann
 
 **Base URL**
 
-<code>https://api.messages.carebnb.app/api/v1</code>
+<code>https://api.messages.carebnb.app/v1</code>
 
 **Request / response properties**
 
@@ -16,11 +16,11 @@ Some properties expect a pre defined value.
 
 Property | Description
 -------- | -------
+API_KEY | An exclusive API key generated for each partner
+PROPERTY_ID | The property ID registered on Carebnb
 EVENT_TYPE | "introduction", "scheduled", "checkin" or "checkout"
 REMINDER_PERIOD | ... "-P2D", "-P1D", "P0D", "P1D", "P2D" ...
-PROPERTY_ID | The property ID registered on Carebnb
 MESSAGE_ID | The message ID registered on Carebnb
-API_KEY | An exclusive API key generated for each partner
 
 **Placeholders**
 
