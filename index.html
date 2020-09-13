@@ -358,13 +358,13 @@
 
                       <ul class="toc-list-h2">
                           <li>
-                            <a href="#get-2" class="toc-h3 toc-link" data-title="Get">Get</a>
-                          </li>
-                          <li>
-                            <a href="#update-2" class="toc-h3 toc-link" data-title="Update">Update</a>
+                            <a href="#get-all" class="toc-h3 toc-link" data-title="Get all">Get all</a>
                           </li>
                           <li>
                             <a href="#create" class="toc-h3 toc-link" data-title="Create">Create</a>
+                          </li>
+                          <li>
+                            <a href="#update-2" class="toc-h3 toc-link" data-title="Update">Update</a>
                           </li>
                           <li>
                             <a href="#delete" class="toc-h3 toc-link" data-title="Delete">Delete</a>
@@ -377,13 +377,13 @@
 
                       <ul class="toc-list-h2">
                           <li>
-                            <a href="#get-3" class="toc-h3 toc-link" data-title="Get">Get</a>
-                          </li>
-                          <li>
-                            <a href="#update-3" class="toc-h3 toc-link" data-title="Update">Update</a>
+                            <a href="#get-all-2" class="toc-h3 toc-link" data-title="Get all">Get all</a>
                           </li>
                           <li>
                             <a href="#create-2" class="toc-h3 toc-link" data-title="Create">Create</a>
+                          </li>
+                          <li>
+                            <a href="#update-3" class="toc-h3 toc-link" data-title="Update">Update</a>
                           </li>
                           <li>
                             <a href="#delete-2" class="toc-h3 toc-link" data-title="Delete">Delete</a>
@@ -670,11 +670,15 @@ It contains the address, as well as all services full info.</p>
 </tr>
 <tr>
 <td>PROPERTY_ID</td>
-<td>Carebnb property ID</td>
+<td>The property ID registered on Carebnb</td>
 </tr>
 <tr>
 <td>MESSAGE_ID</td>
-<td>Carebnb message ID</td>
+<td>The message ID registered on Carebnb</td>
+</tr>
+<tr>
+<td>API_KEY</td>
+<td>An exclusive API key generated for each partner</td>
 </tr>
 </tbody></table>
 
@@ -703,16 +707,11 @@ Values on the left column are replaced by values on the second one in any messag
 <p>Response</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="mi">201</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
     </span><span class="nl">"_id"</span><span class="p">:</span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Hi {guestName},</span><span class="se">\n\n</span><span class="s2">Thanks for choosing us.</span><span class="se">\n\n</span><span class="s2">I'm Carebnb..."</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"introduction"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"reminderPeriod"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"reminderSchedule"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"deletedAt"</span><span class="p">:</span><span class="kc">null</span><span class="w">
+    </span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"introduction"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -729,11 +728,29 @@ This is the message sent to guests at the moment a new reservation is detected</
 </thead><tbody>
 <tr>
 <td>Endpoint</td>
-<td>/messages/carebnbPropertyId/<strong>PROPERTY_ID</strong>/event/introduction</td>
+<td>/messages/event/introduction</td>
 </tr>
 <tr>
 <td>Method</td>
 <td>GET</td>
+</tr>
+</tbody></table>
+
+<p><strong>Request Headers</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api-key</td>
+<td><strong>API_KEY</strong></td>
+</tr>
+<tr>
+<td>property-id</td>
+<td><strong>PROPERTY_ID</strong></td>
 </tr>
 </tbody></table>
 <h3 id='update'>Update</h3>
@@ -741,25 +758,21 @@ This is the message sent to guests at the moment a new reservation is detected</
 <p>Request body</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Updated message. Hi {guestName},</span><span class="se">\n\n</span><span class="s2">Thanks for choosing us.</span><span class="se">\n\n</span><span class="s2">I'm Carebnb..."</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"carebnbPropertyId"</span><span class="p">:</span><span class="s2">"76e122d8-3bb7-4e0e-843c-e26fc0931534"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"introduction"</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Hi {guestName},</span><span class="se">\n\n</span><span class="s2">I'm Carebnb, your automatic hosting.</span><span class="se">\n\n</span><span class="s2">Let us know if there is anything else I can help you with."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"introduction"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <blockquote>
 <p>Response</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="mi">201</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
     </span><span class="nl">"_id"</span><span class="p">:</span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Updated message. Hi {guestName},</span><span class="se">\n\n</span><span class="s2">Thanks for choosing us.</span><span class="se">\n\n</span><span class="s2">I'm Carebnb..."</span><span class="p">,</span><span class="w">
     </span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"introduction"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"reminderPeriod"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"reminderSchedule"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"deletedAt"</span><span class="p">:</span><span class="kc">null</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -776,7 +789,7 @@ This is the message sent to guests at the moment a new reservation is detected</
 </thead><tbody>
 <tr>
 <td>Endpoint</td>
-<td>/messages/<strong>MESSAGE_ID</strong></td>
+<td>/message/messageId/<strong>MESSAGE_ID</strong></td>
 </tr>
 <tr>
 <td>Method</td>
@@ -784,38 +797,45 @@ This is the message sent to guests at the moment a new reservation is detected</
 </tr>
 </tbody></table>
 
-<p>This message can&#39;t be deleted.</p>
-<h2 id='scheduled-messages'>Scheduled messages</h2><h3 id='get-2'>Get</h3>
+<p><strong>Request Headers</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api-key</td>
+<td><strong>API_KEY</strong></td>
+</tr>
+<tr>
+<td>property-id</td>
+<td><strong>PROPERTY_ID</strong></td>
+</tr>
+</tbody></table>
+
+<p>This type of message can&#39;t be deleted.</p>
+<h2 id='scheduled-messages'>Scheduled messages</h2><h3 id='get-all'>Get all</h3>
 <blockquote>
 <p>Response</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="mi">201</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"_id"</span><span class="p">:</span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"It's trash day.</span><span class="se">\n\n</span><span class="s2">Hi  {guestName}, please ..."</span><span class="p">,</span><span class="w">
       </span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"scheduled"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"reminderPeriod"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"reminderSchedule"</span><span class="p">:[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"dayOfWeek"</span><span class="p">:</span><span class="s2">"monday"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"hours"</span><span class="p">:[</span><span class="w">
-              </span><span class="s2">"20:00"</span><span class="w">
-            </span><span class="p">]</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"dayOfWeek"</span><span class="p">:</span><span class="s2">"wednesday"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"hours"</span><span class="p">:[</span><span class="w">
-              </span><span class="s2">"20:00"</span><span class="w">
-            </span><span class="p">]</span><span class="w">
+          </span><span class="nl">"dayOfWeek"</span><span class="p">:</span><span class="s2">"monday"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"hours"</span><span class="p">:[</span><span class="w">
+            </span><span class="s2">"20:00"</span><span class="w">
+          </span><span class="p">]</span><span class="w">
         </span><span class="p">}</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"deletedAt"</span><span class="p">:</span><span class="kc">null</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="err">...</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -832,71 +852,11 @@ The returned messages are the ones sent to guests based on the day of the week.<
 </thead><tbody>
 <tr>
 <td>Endpoint</td>
-<td>/messages/carebnbPropertyId/<strong>PROPERTY_ID</strong>/event/scheduled</td>
+<td>/messages/event/scheduled</td>
 </tr>
 <tr>
 <td>Method</td>
 <td>GET</td>
-</tr>
-</tbody></table>
-<h3 id='update-2'>Update</h3>
-<blockquote>
-<p>Request body</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Updated message for {guestName}.</span><span class="se">\n\n\n</span><span class="s2">att,</span><span class="se">\n</span><span class="s2"> {hostName} ..."</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"scheduled"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"carebnbPropertyId"</span><span class="p">:</span><span class="err">PROPERTY_ID</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<blockquote>
-<p>Response</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="mi">201</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
-    </span><span class="nl">"_id"</span><span class="p">:</span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Updated message for {guestName}.</span><span class="se">\n\n\n</span><span class="s2">att,</span><span class="se">\n</span><span class="s2"> {hostName} ..."</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"scheduled"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"reminderPeriod"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"reminderSchedule"</span><span class="p">:[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"dayOfWeek"</span><span class="p">:</span><span class="s2">"monday"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"hours"</span><span class="p">:[</span><span class="w">
-            </span><span class="s2">"20:00"</span><span class="w">
-          </span><span class="p">]</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"dayOfWeek"</span><span class="p">:</span><span class="s2">"wednesday"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"hours"</span><span class="p">:[</span><span class="w">
-            </span><span class="s2">"20:00"</span><span class="w">
-          </span><span class="p">]</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"deletedAt"</span><span class="p">:</span><span class="kc">null</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>Updates a scheduled message.
-This type of message is sent to guests based on the day of the week.</p>
-
-<p><strong>Request</strong></p>
-
-<table><thead>
-<tr>
-<th>Property</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Endpoint</td>
-<td>/messages/<strong>MESSAGE_ID</strong></td>
-</tr>
-<tr>
-<td>Method</td>
-<td>PUT</td>
 </tr>
 </tbody></table>
 <h3 id='create'>Create</h3>
@@ -904,23 +864,16 @@ This type of message is sent to guests based on the day of the week.</p>
 <p>Request body</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"scheduled"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"New message for {guestName}.</span><span class="se">\n\n\n</span><span class="s2">att,</span><span class="se">\n</span><span class="s2"> {hostName} ..."</span><span class="p">,</span><span class="w">
   </span><span class="nl">"reminderSchedule"</span><span class="p">:[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"dayOfWeek"</span><span class="p">:</span><span class="s2">"monday"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"hours"</span><span class="p">:[</span><span class="w">
-          </span><span class="s2">"20:00"</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"dayOfWeek"</span><span class="p">:</span><span class="s2">"wednesday"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"hours"</span><span class="p">:[</span><span class="w">
-          </span><span class="s2">"20:00"</span><span class="w">
-        </span><span class="p">]</span><span class="w">
+      </span><span class="nl">"dayOfWeek"</span><span class="p">:</span><span class="s2">"monday"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"hours"</span><span class="p">:[</span><span class="w">
+        </span><span class="s2">"20:00"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"scheduled"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"carebnbPropertyId"</span><span class="p">:</span><span class="err">PROPERTY_ID</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <blockquote>
@@ -943,11 +896,106 @@ This type of message is sent to guests based on the day of the week.</p>
 </thead><tbody>
 <tr>
 <td>Endpoint</td>
-<td>/messages</td>
+<td>/message</td>
 </tr>
 <tr>
 <td>Method</td>
 <td>POST</td>
+</tr>
+</tbody></table>
+
+<p><strong>Request Headers</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api-key</td>
+<td><strong>API_KEY</strong></td>
+</tr>
+<tr>
+<td>property-id</td>
+<td><strong>PROPERTY_ID</strong></td>
+</tr>
+</tbody></table>
+<h3 id='update-2'>Update</h3>
+<blockquote>
+<p>Request body</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Updated message for {guestName}.</span><span class="se">\n\n\n</span><span class="s2">att,</span><span class="se">\n</span><span class="s2"> {hostName} ..."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"scheduled"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"reminderSchedule"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"dayOfWeek"</span><span class="p">:</span><span class="s2">"friday"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"hours"</span><span class="p">:[</span><span class="w">
+        </span><span class="s2">"10:00"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
+    </span><span class="nl">"_id"</span><span class="p">:</span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Updated message for {guestName}.</span><span class="se">\n\n\n</span><span class="s2">att,</span><span class="se">\n</span><span class="s2"> {hostName} ..."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"scheduled"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"reminderSchedule"</span><span class="p">:[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"dayOfWeek"</span><span class="p">:</span><span class="s2">"monday"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hours"</span><span class="p">:[</span><span class="w">
+          </span><span class="s2">"10:00"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Updates a scheduled message.
+This type of message is sent to guests based on the day of the week.</p>
+
+<p><strong>Request</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Endpoint</td>
+<td>/message/messageId/<strong>MESSAGE_ID</strong></td>
+</tr>
+<tr>
+<td>Method</td>
+<td>PUT</td>
+</tr>
+</tbody></table>
+
+<p><strong>Request Headers</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api-key</td>
+<td><strong>API_KEY</strong></td>
+</tr>
+<tr>
+<td>property-id</td>
+<td><strong>PROPERTY_ID</strong></td>
 </tr>
 </tbody></table>
 <h3 id='delete'>Delete</h3>
@@ -971,31 +1019,44 @@ This type of message is sent to guests based on the day of the week.</p>
 </thead><tbody>
 <tr>
 <td>Endpoint</td>
-<td>/messages/<strong>MESSAGE_ID</strong></td>
+<td>/message/messageId/<strong>MESSAGE_ID</strong></td>
 </tr>
 <tr>
 <td>Method</td>
 <td>DELETE</td>
 </tr>
 </tbody></table>
-<h2 id='check-in-check-out-messages'>Check in check out messages</h2><h3 id='get-3'>Get</h3>
+
+<p><strong>Request Headers</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api-key</td>
+<td><strong>API_KEY</strong></td>
+</tr>
+<tr>
+<td>property-id</td>
+<td><strong>PROPERTY_ID</strong></td>
+</tr>
+</tbody></table>
+<h2 id='check-in-check-out-messages'>Check in check out messages</h2><h3 id='get-all-2'>Get all</h3>
 <blockquote>
 <p>Response</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="mi">201</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"_id"</span><span class="p">:</span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"It's trash day.</span><span class="se">\n\n</span><span class="s2">Hi  {guestName}, please ..."</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"checkin-checkout"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"reminderPeriod"</span><span class="p">:</span><span class="s2">"-P1D"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"reminderSchedule"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"deletedAt"</span><span class="p">:</span><span class="kc">null</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="err">...</span><span class="w">
+      </span><span class="nl">"event"</span><span class="p">:</span><span class="err">EVENT_TYPE</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"reminderPeriod"</span><span class="p">:</span><span class="s2">"P1D"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -1012,45 +1073,15 @@ The returned messages are the ones sent to guests based on check in check out da
 </thead><tbody>
 <tr>
 <td>Endpoint</td>
-<td>/messages/carebnbPropertyId/<strong>PROPERTY_ID</strong>/event/checkin-checkout</td>
+<td>/messages/event/checkin-checkout</td>
 </tr>
 <tr>
 <td>Method</td>
 <td>GET</td>
 </tr>
 </tbody></table>
-<h3 id='update-3'>Update</h3>
-<blockquote>
-<p>Request body</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Updated message for {guestName}.</span><span class="se">\n\n\n</span><span class="s2">att,</span><span class="se">\n</span><span class="s2"> {hostName} ..."</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"event"</span><span class="p">:</span><span class="err">EVENT_TYPE</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"carebnbPropertyId"</span><span class="p">:</span><span class="err">PROPERTY_ID</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"reminderPeriod"</span><span class="p">:</span><span class="err">REMINDER_PERIOD</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<blockquote>
-<p>Response</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="mi">201</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
-    </span><span class="nl">"_id"</span><span class="p">:</span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Updated message for {guestName}.</span><span class="se">\n\n\n</span><span class="s2">att,</span><span class="se">\n</span><span class="s2"> {hostName} ..."</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"checkin"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"reminderPeriod"</span><span class="p">:</span><span class="s2">"-P1D"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"reminderSchedule"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"deletedAt"</span><span class="p">:</span><span class="kc">null</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>Updates a check in check out based message.
-This type of message is sent to guests based on check in check out date.</p>
 
-<p><strong>Request</strong></p>
+<p><strong>Request Headers</strong></p>
 
 <table><thead>
 <tr>
@@ -1059,12 +1090,12 @@ This type of message is sent to guests based on check in check out date.</p>
 </tr>
 </thead><tbody>
 <tr>
-<td>Endpoint</td>
-<td>/messages/<strong>MESSAGE_ID</strong></td>
+<td>api-key</td>
+<td><strong>API_KEY</strong></td>
 </tr>
 <tr>
-<td>Method</td>
-<td>PUT</td>
+<td>property-id</td>
+<td><strong>PROPERTY_ID</strong></td>
 </tr>
 </tbody></table>
 <h3 id='create-2'>Create</h3>
@@ -1074,7 +1105,6 @@ This type of message is sent to guests based on check in check out date.</p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"New message for {guestName}.</span><span class="se">\n\n\n</span><span class="s2">att,</span><span class="se">\n</span><span class="s2"> {hostName} ..."</span><span class="p">,</span><span class="w">
   </span><span class="nl">"event"</span><span class="p">:</span><span class="err">EVENT_TYPE</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"carebnbPropertyId"</span><span class="p">:</span><span class="err">PROPERTY_ID</span><span class="p">,</span><span class="w">
   </span><span class="nl">"reminderPeriod"</span><span class="p">:</span><span class="err">REMINDER_PERIOD</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -1098,11 +1128,92 @@ This type of message is sent to guests based on check in check out date.</p>
 </thead><tbody>
 <tr>
 <td>Endpoint</td>
-<td>/messages</td>
+<td>/message</td>
 </tr>
 <tr>
 <td>Method</td>
 <td>POST</td>
+</tr>
+</tbody></table>
+
+<p><strong>Request Headers</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api-key</td>
+<td><strong>API_KEY</strong></td>
+</tr>
+<tr>
+<td>property-id</td>
+<td><strong>PROPERTY_ID</strong></td>
+</tr>
+</tbody></table>
+<h3 id='update-3'>Update</h3>
+<blockquote>
+<p>Request body</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"event"</span><span class="p">:</span><span class="err">EVENT_TYPE</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Hi {guestName},</span><span class="se">\n\n</span><span class="s2">It's Carebnb again.</span><span class="se">\n</span><span class="s2">Tomorrow is the big day!</span><span class="se">\n\n</span><span class="s2">Prior to your arrival, our place was cleaned, sanitized and inspected. All seems to work fine, but let me know if you encounter any issue.</span><span class="se">\n\n</span><span class="s2">{hostName} and I are looking forward to hosting you."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"reminderPeriod"</span><span class="p">:</span><span class="s2">"P1D"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
+    </span><span class="nl">"_id"</span><span class="p">:</span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Updated message for {guestName}.</span><span class="se">\n\n\n</span><span class="s2">att,</span><span class="se">\n</span><span class="s2"> {hostName} ..."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"event"</span><span class="p">:</span><span class="err">EVENT_TYPE</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"reminderPeriod"</span><span class="p">:</span><span class="s2">"-P1D"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Updates a check in check out based message.
+This type of message is sent to guests based on check in check out date.</p>
+
+<p><strong>Request</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Endpoint</td>
+<td>/message/messageId/<strong>MESSAGE_ID</strong></td>
+</tr>
+<tr>
+<td>Method</td>
+<td>PUT</td>
+</tr>
+</tbody></table>
+
+<p><strong>Request Headers</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api-key</td>
+<td><strong>API_KEY</strong></td>
+</tr>
+<tr>
+<td>property-id</td>
+<td><strong>PROPERTY_ID</strong></td>
 </tr>
 </tbody></table>
 <h3 id='delete-2'>Delete</h3>
@@ -1126,11 +1237,29 @@ This type of message is sent to guests based on check in check out date.</p>
 </thead><tbody>
 <tr>
 <td>Endpoint</td>
-<td>/messages/<strong>MESSAGE_ID</strong></td>
+<td>/message/messageId/<strong>MESSAGE_ID</strong></td>
 </tr>
 <tr>
 <td>Method</td>
 <td>DELETE</td>
+</tr>
+</tbody></table>
+
+<p><strong>Request Headers</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api-key</td>
+<td><strong>API_KEY</strong></td>
+</tr>
+<tr>
+<td>property-id</td>
+<td><strong>PROPERTY_ID</strong></td>
 </tr>
 </tbody></table>
 <h1 id='carebnb-chatbot'>Carebnb Chatbot</h1>
