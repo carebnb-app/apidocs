@@ -1,4 +1,4 @@
-# Smart info board.
+# Smart info board
 
 Carebnb displays personalized messages straight through our smart info board.
 
