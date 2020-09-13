@@ -1,10 +1,6 @@
 # Errors
 
-<aside class="notice">
-All errors are the same across all Carebnb services.
-</aside>
-
-The Kittn API uses the following error codes:
+Carebnb API uses the following error codes:
 
 
 Error Code | Meaning
@@ -15,3 +11,7 @@ Error Code | Meaning
 404 | Not Found -- Endpoint not found.
 500 | Internal Server Error -- We had a problem with our server. Try again later.
 503 | Service Unavailable -- We're temporarily offline for maintenance. Please try again later.
+
+<aside class="notice">
+All errors are the same across all Carebnb services.
+</aside>
