@@ -18,8 +18,9 @@ Property | Description
 -------- | -------
 EVENT_TYPE | "introduction", "scheduled", "checkin" or "checkout"
 REMINDER_PERIOD | ... "-P2D", "-P1D", "P0D", "P1D", "P2D" ...
-PROPERTY_ID | Carebnb property ID
-MESSAGE_ID | Carebnb message ID
+PROPERTY_ID | The property ID registered on Carebnb
+MESSAGE_ID | The message ID registered on Carebnb
+API_KEY | An exclusive API key generated for each partner
 
 **Placeholders**
 
@@ -43,16 +44,11 @@ Placeholder | Description
 
 ```json
 {
-  "statusCode":201,
+  "statusCode":200,
   "data":{
     "_id":"q1w2e3r4t5y6u7i8o9p0q1w2",
     "message":"Hi {guestName},\n\nThanks for choosing us.\n\nI'm Carebnb...",
-    "event":"introduction",
-    "reminderPeriod":null,
-    "reminderSchedule":null,
-    "createdAt":"2020-01-01T00:00:00.000Z",
-    "updatedAt":"2020-01-01T00:00:00.000Z",
-    "deletedAt":null
+    "event":"introduction"
   }
 }
 ```
@@ -64,8 +60,15 @@ This is the message sent to guests at the moment a new reservation is detected
 
 Property | Value
 -------- | -------
-Endpoint | /messages/carebnbPropertyId/**PROPERTY_ID**/event/introduction
+Endpoint | /messages/event/introduction
 Method   | GET
+
+**Request Headers**
+
+Property    | Value
+----------- | -------
+api-key     | **API_KEY**
+property-id | **PROPERTY_ID**
 
 
 
@@ -77,9 +80,8 @@ Method   | GET
 
 ```json
 {
-   "message":"Updated message. Hi {guestName},\n\nThanks for choosing us.\n\nI'm Carebnb...",
-   "carebnbPropertyId":"76e122d8-3bb7-4e0e-843c-e26fc0931534",
-   "event":"introduction"
+  "message":"Hi {guestName},\n\nI'm Carebnb, your automatic hosting.\n\nLet us know if there is anything else I can help you with.",
+  "event":"introduction"
 }
 ```
 
@@ -87,16 +89,13 @@ Method   | GET
 
 ```json
 {
-  "statusCode":201,
+  "statusCode":200,
   "data":{
     "_id":"q1w2e3r4t5y6u7i8o9p0q1w2",
     "message":"Updated message. Hi {guestName},\n\nThanks for choosing us.\n\nI'm Carebnb...",
     "event":"introduction",
-    "reminderPeriod":null,
-    "reminderSchedule":null,
     "createdAt":"2020-01-01T00:00:00.000Z",
-    "updatedAt":"2020-01-01T00:00:00.000Z",
-    "deletedAt":null
+    "updatedAt":"2020-01-01T00:00:00.000Z"
   }
 }
 ```
@@ -108,10 +107,17 @@ This is the message sent to guests at the moment a new reservation is detected
 
 Property | Value
 -------- | -------
-Endpoint | /messages/**MESSAGE_ID**
+Endpoint | /message/messageId/**MESSAGE_ID**
 Method   | PUT
 
-This message can't be deleted.
+**Request Headers**
+
+Property    | Value
+----------- | -------
+api-key     | **API_KEY**
+property-id | **PROPERTY_ID**
+
+This type of message can't be deleted.
 
 
 
@@ -119,38 +125,27 @@ This message can't be deleted.
 
 ## Scheduled messages
 
-### Get
+### Get all
 
 > Response
 
 ```json
 {
-  "statusCode":201,
+  "statusCode":200,
   "data":[
     {
       "_id":"q1w2e3r4t5y6u7i8o9p0q1w2",
       "message":"It's trash day.\n\nHi  {guestName}, please ...",
       "event":"scheduled",
-      "reminderPeriod":null,
       "reminderSchedule":[
         {
-            "dayOfWeek":"monday",
-            "hours":[
-              "20:00"
-            ]
-        },
-        {
-            "dayOfWeek":"wednesday",
-            "hours":[
-              "20:00"
-            ]
+          "dayOfWeek":"monday",
+          "hours":[
+            "20:00"
+          ]
         }
-      ],
-      "createdAt":"2020-01-01T00:00:00.000Z",
-      "updatedAt":"2020-01-01T00:00:00.000Z",
-      "deletedAt":null
-    },
-    ...
+      ]
+    }
   ]
 }
 ```
@@ -162,65 +157,8 @@ The returned messages are the ones sent to guests based on the day of the week.
 
 Property | Value
 -------- | -------
-Endpoint | /messages/carebnbPropertyId/**PROPERTY_ID**/event/scheduled
+Endpoint | /messages/event/scheduled
 Method   | GET
-
-
-
-
-
-### Update
-
-> Request body
-
-```json
-{
-  "message":"Updated message for {guestName}.\n\n\natt,\n {hostName} ...",
-  "event":"scheduled",
-  "carebnbPropertyId":PROPERTY_ID
-}
-```
-
-> Response
-
-```json
-{
-  "statusCode":201,
-  "data":{
-    "_id":"q1w2e3r4t5y6u7i8o9p0q1w2",
-    "message":"Updated message for {guestName}.\n\n\natt,\n {hostName} ...",
-    "event": "scheduled",
-    "reminderPeriod":null,
-    "reminderSchedule":[
-      {
-          "dayOfWeek":"monday",
-          "hours":[
-            "20:00"
-          ]
-      },
-      {
-          "dayOfWeek":"wednesday",
-          "hours":[
-            "20:00"
-          ]
-      }
-    ],
-    "createdAt":"2020-01-01T00:00:00.000Z",
-    "updatedAt":"2020-01-01T00:00:00.000Z",
-    "deletedAt":null
-  }
-}
-```
-
-Updates a scheduled message.
-This type of message is sent to guests based on the day of the week.
-
-**Request**
-
-Property | Value
--------- | -------
-Endpoint | /messages/**MESSAGE_ID**
-Method   | PUT
 
 
 
@@ -232,23 +170,16 @@ Method   | PUT
 
 ```json
 {
+  "event":"scheduled",
   "message":"New message for {guestName}.\n\n\natt,\n {hostName} ...",
   "reminderSchedule":[
     {
-        "dayOfWeek":"monday",
-        "hours":[
-          "20:00"
-        ]
-    },
-    {
-        "dayOfWeek":"wednesday",
-        "hours":[
-          "20:00"
-        ]
+      "dayOfWeek":"monday",
+      "hours":[
+        "20:00"
+      ]
     }
-  ],
-  "event":"scheduled",
-  "carebnbPropertyId":PROPERTY_ID
+  ]
 }
 ```
 
@@ -267,8 +198,78 @@ This type of message is sent to guests based on the day of the week.
 
 Property | Value
 -------- | -------
-Endpoint | /messages
+Endpoint | /message
 Method   | POST
+
+**Request Headers**
+
+Property    | Value
+----------- | -------
+api-key     | **API_KEY**
+property-id | **PROPERTY_ID**
+
+
+
+
+
+### Update
+
+> Request body
+
+```json
+{
+  "message":"Updated message for {guestName}.\n\n\natt,\n {hostName} ...",
+  "event":"scheduled",
+  "reminderSchedule":[
+    {
+      "dayOfWeek":"friday",
+      "hours":[
+        "10:00"
+      ]
+    }
+  ]
+}
+```
+
+> Response
+
+```json
+{
+  "statusCode":200,
+  "data":{
+    "_id":"q1w2e3r4t5y6u7i8o9p0q1w2",
+    "message":"Updated message for {guestName}.\n\n\natt,\n {hostName} ...",
+    "event":"scheduled",
+      "reminderSchedule":[
+      {
+        "dayOfWeek":"monday",
+        "hours":[
+          "10:00"
+        ]
+      }
+    ],
+    "createdAt":"2020-01-01T00:00:00.000Z",
+    "updatedAt":"2020-01-01T00:00:00.000Z"
+  }
+}
+```
+
+Updates a scheduled message.
+This type of message is sent to guests based on the day of the week.
+
+**Request**
+
+Property | Value
+-------- | -------
+Endpoint | /message/messageId/**MESSAGE_ID**
+Method   | PUT
+
+**Request Headers**
+
+Property    | Value
+----------- | -------
+api-key     | **API_KEY**
+property-id | **PROPERTY_ID**
 
 
 
@@ -291,8 +292,15 @@ This type of message is sent to guests based on the day of the week.
 
 Property | Value
 -------- | -------
-Endpoint | /messages/**MESSAGE_ID**
+Endpoint | /message/messageId/**MESSAGE_ID**
 Method   | DELETE
+
+**Request Headers**
+
+Property    | Value
+----------- | -------
+api-key     | **API_KEY**
+property-id | **PROPERTY_ID**
 
 
 
@@ -300,25 +308,20 @@ Method   | DELETE
 
 ## Check in check out messages
 
-### Get
+### Get all
 
 > Response
 
 ```json
 {
-  "statusCode":201,
+  "statusCode":200,
   "data":[
     {
       "_id":"q1w2e3r4t5y6u7i8o9p0q1w2",
       "message":"It's trash day.\n\nHi  {guestName}, please ...",
-      "event":"checkin-checkout",
-      "reminderPeriod":"-P1D",
-      "reminderSchedule":null,
-      "createdAt":"2020-01-01T00:00:00.000Z",
-      "updatedAt":"2020-01-01T00:00:00.000Z",
-      "deletedAt":null
-    },
-    ...
+      "event":EVENT_TYPE,
+      "reminderPeriod":"P1D"
+    }
   ]
 }
 ```
@@ -330,53 +333,15 @@ The returned messages are the ones sent to guests based on check in check out da
 
 Property | Value
 -------- | -------
-Endpoint | /messages/carebnbPropertyId/**PROPERTY_ID**/event/checkin-checkout
+Endpoint | /messages/event/checkin-checkout
 Method   | GET
 
+**Request Headers**
 
-
-
-
-### Update
-
-> Request body
-
-```json
-{
-  "message":"Updated message for {guestName}.\n\n\natt,\n {hostName} ...",
-  "event":EVENT_TYPE,
-  "carebnbPropertyId":PROPERTY_ID,
-  "reminderPeriod":REMINDER_PERIOD
-}
-```
-
-> Response
-
-```json
-{
-  "statusCode":201,
-  "data":{
-    "_id":"q1w2e3r4t5y6u7i8o9p0q1w2",
-    "message":"Updated message for {guestName}.\n\n\natt,\n {hostName} ...",
-    "event":"checkin",
-    "reminderPeriod":"-P1D",
-    "reminderSchedule":null,
-    "createdAt":"2020-01-01T00:00:00.000Z",
-    "updatedAt":"2020-01-01T00:00:00.000Z",
-    "deletedAt":null
-  }
-}
-```
-
-Updates a check in check out based message.
-This type of message is sent to guests based on check in check out date.
-
-**Request**
-
-Property | Value
--------- | -------
-Endpoint | /messages/**MESSAGE_ID**
-Method   | PUT
+Property    | Value
+----------- | -------
+api-key     | **API_KEY**
+property-id | **PROPERTY_ID**
 
 
 
@@ -390,7 +355,6 @@ Method   | PUT
 {
   "message":"New message for {guestName}.\n\n\natt,\n {hostName} ...",
   "event":EVENT_TYPE,
-  "carebnbPropertyId":PROPERTY_ID,
   "reminderPeriod":REMINDER_PERIOD
 }
 ```
@@ -410,8 +374,64 @@ This type of message is sent to guests based on check in check out date.
 
 Property | Value
 -------- | -------
-Endpoint | /messages
+Endpoint | /message
 Method   | POST
+
+**Request Headers**
+
+Property    | Value
+----------- | -------
+api-key     | **API_KEY**
+property-id | **PROPERTY_ID**
+
+
+
+
+
+### Update
+
+> Request body
+
+```json
+{
+  "event":EVENT_TYPE,
+  "message":"Hi {guestName},\n\nIt's Carebnb again.\nTomorrow is the big day!\n\nPrior to your arrival, our place was cleaned, sanitized and inspected. All seems to work fine, but let me know if you encounter any issue.\n\n{hostName} and I are looking forward to hosting you.",
+  "reminderPeriod":"P1D"
+}
+```
+
+> Response
+
+```json
+{
+  "statusCode":200,
+  "data":{
+    "_id":"q1w2e3r4t5y6u7i8o9p0q1w2",
+    "message":"Updated message for {guestName}.\n\n\natt,\n {hostName} ...",
+    "event":EVENT_TYPE,
+    "reminderPeriod":"-P1D",
+    "createdAt":"2020-01-01T00:00:00.000Z",
+    "updatedAt":"2020-01-01T00:00:00.000Z"
+  }
+}
+```
+
+Updates a check in check out based message.
+This type of message is sent to guests based on check in check out date.
+
+**Request**
+
+Property | Value
+-------- | -------
+Endpoint | /message/messageId/**MESSAGE_ID**
+Method   | PUT
+
+**Request Headers**
+
+Property    | Value
+----------- | -------
+api-key     | **API_KEY**
+property-id | **PROPERTY_ID**
 
 
 
@@ -434,5 +454,12 @@ This type of message is sent to guests based on check in check out date.
 
 Property | Value
 -------- | -------
-Endpoint | /messages/**MESSAGE_ID**
+Endpoint | /message/messageId/**MESSAGE_ID**
 Method   | DELETE
+
+**Request Headers**
+
+Property    | Value
+----------- | -------
+api-key     | **API_KEY**
+property-id | **PROPERTY_ID**
