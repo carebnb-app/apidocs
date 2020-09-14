@@ -18,7 +18,23 @@ In this section, We describe all endpoints for this mean.
 > Response
 
 ```json
-@TODO
+{
+  "statusCode": 200,
+  "message": "Users list",
+  "data": [
+		{
+			"userId": "79d76f9b-5a2e-4933-8741-...",
+			"name": "John Doe",
+			"email": "john.doe@mail.co",
+			"birthDate": "1990-01-01",
+			"gender": "male",
+			"cellphone": "+55(61)12375-4345",
+			"address": "Happy street at 5th avenue",
+			"countryCode": "USA",
+			"zipCode": "71.672-188"
+		}
+  ]
+}
 ```
 
 Returns all users. Normally are hosts.
@@ -46,7 +62,21 @@ api-key | **API_KEY**
 > Response
 
 ```json
-@TODO
+{
+  "statusCode": 200,
+  "message": "Users info",
+  "data": {
+		"userId": "79d76f9b-5a2e-4933-8741-...",
+		"name": "John Doe",
+		"email": "john.doe@mail.co",
+		"birthDate": "1990-01-01",
+		"gender": "male",
+		"cellphone": "+55(61)12375-4345",
+		"address": "Happy street at 5th avenue",
+		"countryCode": "USA",
+		"zipCode": "71.672-188"
+	}
+}
 ```
 
 Returns a user. Normally is a host.
@@ -82,14 +112,28 @@ api-key | **API_KEY**
 	"cellphone": "+55(61)12375-4345",
 	"address": "Happy street at 5th avenue",
 	"countryCode": "USA",
-	"postalCode": "71.672-188"
+	"zipCode": "71.672-188"
 }
 ```
 
 > Response
 
 ```json
-@TODO
+{
+  "statusCode": 201,
+  "message": "User created",
+  "data": {
+		"userId": "79d76f9b-5a2e-4933-8741-...",
+		"name": "John Doe",
+		"email": "john.doe@mail.co",
+		"birthDate": "1990-01-01",
+		"gender": "male",
+		"cellphone": "+55(61)12375-4345",
+		"address": "Happy street at 5th avenue",
+		"countryCode": "USA",
+		"zipCode": "71.672-188"
+	}
+}
 ```
 
 Creates a new user. Normally is a host.
@@ -139,14 +183,28 @@ Content-Type | application/json
 	"cellphone": "+55(61)12375-4345",
 	"address": "Happy street at 5th avenue",
 	"countryCode": "USA",
-	"postalCode": "71.672-188"
+	"zipCode": "71.672-188"
 }
 ```
 
 > Response
 
 ```json
-@TODO
+{
+  "statusCode": 200,
+  "message": "User updated",
+  "data": {
+		"userId": "79d76f9b-5a2e-4933-8741-...",
+		"name": "John Doe",
+		"email": "john.doe@mail.co",
+		"birthDate": "1990-01-01",
+		"gender": "male",
+		"cellphone": "+55(61)12375-4345",
+		"address": "Happy street at 5th avenue",
+		"countryCode": "USA",
+		"zipCode": "71.672-188"
+  }
+}
 ```
 
 Updates a user. Normally is a host.
@@ -188,7 +246,10 @@ Content-Type | application/json
 > Response
 
 ```json
-@TODO
+{
+  "statusCode": 200,
+  "message": "User deleted"
+}
 ```
 
 Deletes a user. Normally is a host.
