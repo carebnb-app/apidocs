@@ -325,7 +325,7 @@ api-key | **API_KEY**
   "message": "Users list",
   "data": [
     {
-      "userId": "79d76f9b-5a2e-4933-8741-ad7bb09bc25d",
+      "userId": "79d76f9b-5a2e-4933-8741-ad7bb09bc...",
       "name": "John Doe",
       "email": "john.doe@mail.co",
       "birthDate": null,

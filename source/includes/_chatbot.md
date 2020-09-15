@@ -36,7 +36,7 @@ RULE_ANSWER | "no", "yes" or "maybe"
   "message": "FAQs list",
   "data": [
     {
-      "faqId": "7b02c6af-aff6-4f61-9508-b0259908debb",
+      "faqId": "7b02c6af-aff6-4f61-9508-b0259908d...",
       "question": "How can I...?",
       "answer": "Easy, you can just..."
     },
@@ -83,7 +83,7 @@ property-id | **PROPERTY_ID**
   "statusCode": 201,
   "message": "FAQ created",
   "data": {
-    "faqId": "7b02c6af-aff6-4f61-9508-b0259908debb",
+    "faqId": "7b02c6af-aff6-4f61-9508-b0259908d...",
     "question": "How can I...?",
     "answer": "Easy, you can just..."
   }
@@ -132,7 +132,7 @@ property-id | **PROPERTY_ID**
   "statusCode": 200,
   "message": "FAQ updated",
   "data": {
-    "faqId": "7b02c6af-aff6-4f61-9508-b0259908debb",
+    "faqId": "7b02c6af-aff6-4f61-9508-b0259908d...",
     "question": "How can I...?",
     "answer": "Easy, you can just..."
   }
@@ -208,12 +208,12 @@ property-id | **PROPERTY_ID**
   "message": "Rules list",
   "data": [
     {
-      "ruleId": "63996a85-4bfe-4a37-bfb5-a1286b2ac52f",
+      "ruleId": "63996a85-4bfe-4a37-bfb5-a1286b2ac...",
       "name": "Pets?",
       "answer": "no"
     },
     {
-      "ruleId": "3871f9a7-daf6-46cf-8486-0c82d1723970",
+      "ruleId": "3871f9a7-daf6-46cf-8486-0c82d1723...",
       "name": "Can I smoke at home?",
       "answer": "yes"
     },
@@ -251,7 +251,7 @@ property-id | **PROPERTY_ID**
   "statusCode": 200,
   "message": "Rule updated",
   "data": {
-    "ruleId": "63996a85-4bfe-4a37-bfb5-a1286b2ac52f",
+    "ruleId": "63996a85-4bfe-4a37-bfb5-a1286b2ac...",
     "name": "Pets?",
     "answer": "no"
   }
@@ -352,7 +352,7 @@ property-id | **PROPERTY_ID**
   "statusCode": 201,
   "message": "Place created",
   "data": {
-    "placeId": "e541ea21-60d5-43e0-b41d-9ad002255245",
+    "placeId": "e541ea21-60d5-43e0-b41d-9ad002255...",
     "place": "Pool",
     "distance": "Walking distance",
     "time": "2 minutes"
@@ -407,7 +407,7 @@ property-id | **PROPERTY_ID**
   "statusCode": 200,
   "message": "Place updated",
   "data": {
-    "placeId": "e541ea21-60d5-43e0-b41d-9ad002255245",
+    "placeId": "e541ea21-60d5-43e0-b41d-9ad002255...",
     "place": "Pool",
     "distance": "Walking distance",
     "time": "2 minutes"

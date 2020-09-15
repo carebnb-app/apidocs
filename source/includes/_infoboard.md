@@ -49,7 +49,7 @@ Placeholder | Description
 {
   "statusCode":200,
   "data":{
-    "messageId":"q1w2e3r4t5y6u7i8o9p0q1w2",
+    "messageId":"e7ac8705-a7c1-4f2c-8e32-036daaa30...",
     "message":"Hi {guestName},\n\nThanks for choosing us.\n\nI'm Carebnb...",
     "event":"introduction"
   }
@@ -95,7 +95,7 @@ property-id | **PROPERTY_ID**
 {
   "statusCode":200,
   "data":{
-    "messageId":"q1w2e3r4t5y6u7i8o9p0q1w2",
+    "messageId":"e7ac8705-a7c1-4f2c-8e32-036daaa30...",
     "message":"Updated message. Hi {guestName},\n\nThanks for choosing us.\n\nI'm Carebnb...",
     "event":"introduction"
   }
@@ -137,7 +137,7 @@ This type of message can't be deleted.
   "statusCode":200,
   "data":[
     {
-      "messageId":"q1w2e3r4t5y6u7i8o9p0q1w2",
+      "messageId":"e7ac8705-a7c1-4f2c-8e32-036daaa30...",
       "message":"It's trash day.\n\nHi  {guestName}, please ...",
       "event":"scheduled",
       "reminderSchedule":[
@@ -250,7 +250,7 @@ property-id | **PROPERTY_ID**
 {
   "statusCode":200,
   "data":{
-    "messageId":"q1w2e3r4t5y6u7i8o9p0q1w2",
+    "messageId":"e7ac8705-a7c1-4f2c-8e32-036daaa30...",
     "message":"Updated message for {guestName}.\n\n\natt,\n {hostName} ...",
     "event":"scheduled",
       "reminderSchedule":[
@@ -330,7 +330,7 @@ property-id | **PROPERTY_ID**
   "statusCode":200,
   "data":[
     {
-      "messageId":"q1w2e3r4t5y6u7i8o9p0q1w2",
+      "messageId":"e7ac8705-a7c1-4f2c-8e32-036daaa30...",
       "message":"It's trash day.\n\nHi  {guestName}, please ...",
       "event":"introduction",
       "reminderPeriod":"P1D"
@@ -422,7 +422,7 @@ property-id | **PROPERTY_ID**
 {
   "statusCode":200,
   "data":{
-    "messageId":"q1w2e3r4t5y6u7i8o9p0q1w2",
+    "messageId":"e7ac8705-a7c1-4f2c-8e32-036daaa30...",
     "message":"Updated message for {guestName}.\n\n\natt,\n {hostName} ...",
     "event":"introduction",
     "reminderPeriod":"-P1D"

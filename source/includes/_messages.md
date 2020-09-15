@@ -47,7 +47,7 @@ Placeholder | Description
 {
   "statusCode":200,
   "data":{
-    "messageId":"q1w2e3r4t5y6u7i8o9p0q1w2",
+    "messageId":"1b2d8387-d46c-4344-a4d6-8b62d0d0a...",
     "message":"Hi {guestName},\n\nThanks for choosing us.\n\nI'm Carebnb...",
     "event":"introduction"
   }
@@ -93,7 +93,7 @@ property-id | **PROPERTY_ID**
 {
   "statusCode":200,
   "data":{
-    "messageId":"q1w2e3r4t5y6u7i8o9p0q1w2",
+    "messageId":"1b2d8387-d46c-4344-a4d6-8b62d0d0a...",
     "message":"Updated message. Hi {guestName},\n\nThanks for choosing us.\n\nI'm Carebnb...",
     "event":"introduction"
   }
@@ -135,7 +135,7 @@ This type of message can't be deleted.
   "statusCode":200,
   "data":[
     {
-      "messageId":"q1w2e3r4t5y6u7i8o9p0q1w2",
+      "messageId":"1b2d8387-d46c-4344-a4d6-8b62d0d0a...",
       "message":"It's trash day.\n\nHi  {guestName}, please ...",
       "event":"scheduled",
       "reminderSchedule":[
@@ -146,7 +146,8 @@ This type of message can't be deleted.
           ]
         }
       ]
-    }
+    },
+    ...
   ]
 }
 ```
@@ -247,7 +248,7 @@ property-id | **PROPERTY_ID**
 {
   "statusCode":200,
   "data":{
-    "messageId":"q1w2e3r4t5y6u7i8o9p0q1w2",
+    "messageId":"1b2d8387-d46c-4344-a4d6-8b62d0d0a...",
     "message":"Updated message for {guestName}.\n\n\natt,\n {hostName} ...",
     "event":"scheduled",
       "reminderSchedule":[
@@ -327,11 +328,12 @@ property-id | **PROPERTY_ID**
   "statusCode":200,
   "data":[
     {
-      "messageId":"q1w2e3r4t5y6u7i8o9p0q1w2",
+      "messageId":"1b2d8387-d46c-4344-a4d6-8b62d0d0a...",
       "message":"It's trash day.\n\nHi  {guestName}, please ...",
       "event":EVENT_TYPE,
       "reminderPeriod":"P1D"
-    }
+    },
+    ...
   ]
 }
 ```
@@ -418,7 +420,7 @@ property-id | **PROPERTY_ID**
 {
   "statusCode":200,
   "data":{
-    "messageId":"q1w2e3r4t5y6u7i8o9p0q1w2",
+    "messageId":"1b2d8387-d46c-4344-a4d6-8b62d0d0a...",
     "message":"Updated message for {guestName}.\n\n\natt,\n {hostName} ...",
     "event":"checkin",
     "reminderPeriod":"-P1D"
