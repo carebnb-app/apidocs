@@ -10,6 +10,7 @@ includes:
   - management
   - messages
   - chatbot
+  - smartlocks
   - infoboard
   - lab
   - errors
