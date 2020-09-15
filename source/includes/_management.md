@@ -487,7 +487,14 @@ api-key | **API_KEY**
 
 
 
+
 ## Manage services
+
+These are the actions related to checking, enabling or disabling services for a given property.
+
+<aside class="notice">
+  All operations here are "by property". Which means, the PROPERTY_ID value must be passed to every call.
+</aside>
 
 ### Get all
 
@@ -503,13 +510,12 @@ api-key | **API_KEY**
       "description": "Automatic check in check out",
       "url": "https://api.messages.carebnb.app",
       "active": true
-		},
-		...
+		}
   ]
 }
 ```
 
-Returns all services info by a property.
+Returns all services associated to a property.
 
 **Request**
 
@@ -545,13 +551,13 @@ property-id | **PROPERTY_ID**
 }
 ```
 
-Returns a specific service info by a property.
+Returns info and status of a specific service associated to a property.
 
 **Request**
 
 Property | Value
 -------- | -------
-Endpoint | /service/serviceId/:serviceId
+Endpoint | /service/serviceId/**SERVICE_ID**
 Method   | GET
 
 **Request Headers**
@@ -584,13 +590,13 @@ property-id | **PROPERTY_ID**
 }
 ```
 
-Enable a service for a property.
+Enable a service associated to a property.
 
 **Request**
 
 Property | Value
 -------- | -------
-Endpoint | /service/enable/serviceId/:serviceId
+Endpoint | /service/enable/serviceId/**SERVICE_ID**
 Method   | POST
 
 **Request Headers**
@@ -624,13 +630,13 @@ Content-Type | application/json
 }
 ```
 
-Disable a service for a property.
+Disable a service associated to a property.
 
 **Request**
 
 Property | Value
 -------- | -------
-Endpoint | /service/disable/serviceId/:serviceId
+Endpoint | /service/disable/serviceId/**SERVICE_ID**
 Method   | POST
 
 **Request Headers**
