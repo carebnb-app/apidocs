@@ -17,7 +17,7 @@ Property | Description
 -------- | -------
 API_KEY | An exclusive API key generated for each partner
 PROPERTY_ID | The property ID registered on Carebnb
-RULE | A list of all rules is retrieved by "Get all" in "Rouse rules" section
+RULE | A list of all rules is retrieved by "Get all" in "House rules" section
 RULE_ANSWER | "no", "yes" or "maybe"
 
 
@@ -31,13 +31,18 @@ RULE_ANSWER | "no", "yes" or "maybe"
 > Response
 
 ```json
-[
-  {
-    "_id": "q1w2e3r4t5y6u7i8o9p0q1w2",
-    "question": "How can I...?",
-    "answer": "Easy, you can just..."
-  }
-]
+{
+  "statusCode": 200,
+  "message": "FAQs list",
+  "data": [
+    {
+      "faqId": "7b02c6af-aff6-4f61-9508-b0259908debb",
+      "question": "How can I...?",
+      "answer": "Easy, you can just..."
+    },
+    ...
+  ]
+}
 ```
 
 Returns all frequently asked questions for a given property.
@@ -68,7 +73,7 @@ property-id | **PROPERTY_ID**
 {
   "question": "How can I...?",
   "answer": "Easy, you can just..."
-}
+}	
 ```
 
 > Response
@@ -76,8 +81,9 @@ property-id | **PROPERTY_ID**
 ```json
 {
   "statusCode": 201,
+  "message": "FAQ created",
   "data": {
-    "_id": "q1w2e3r4t5y6u7i8o9p0q1w2",
+    "faqId": "7b02c6af-aff6-4f61-9508-b0259908debb",
     "question": "How can I...?",
     "answer": "Easy, you can just..."
   }
@@ -93,16 +99,19 @@ Property | Value
 Endpoint | /faq
 Method   | POST
 
+**Request object parameters**
+
+| param | type | description | required? |
+| ------ | ------ | ------ | ------ |
+| question | String(4000) | The most apropriated question title | yes
+| answer | String(4000) | Resumed answer for the FAQ item | yes
+
 **Request Headers**
 
 Property    | Value
 ----------- | -------
 api-key     | **API_KEY**
 property-id | **PROPERTY_ID**
-Content-Type | application/json
-
-
-
 
 
 ### Update
@@ -113,20 +122,19 @@ Content-Type | application/json
 {
   "question": "How can I...?",
   "answer": "Easy, you can just..."
-}
+}	
 ```
 
 > Response
 
 ```json
 {
-  "statusCode":200,
-  "data":{
-    "_id": "q1w2e3r4t5y6u7i8o9p0q1w2",
+  "statusCode": 200,
+  "message": "FAQ updated",
+  "data": {
+    "faqId": "7b02c6af-aff6-4f61-9508-b0259908debb",
     "question": "How can I...?",
-    "answer": "Easy, you can just...",
-    "createdAt":"2020-01-01T00:00:00.000Z",
-    "updatedAt":"2020-01-01T00:00:00.000Z"
+    "answer": "Easy, you can just..."
   }
 }
 ```
@@ -146,8 +154,13 @@ Property    | Value
 ----------- | -------
 api-key     | **API_KEY**
 property-id | **PROPERTY_ID**
-Content-Type | application/json
 
+**Request object parameters**
+
+| param | type | description | required? |
+| ------ | ------ | ------ | ------ |
+| question | String(4000) | The most apropriated question title | yes
+| answer | String(4000) | Resumed answer for the FAQ item | yes
 
 
 
@@ -158,7 +171,8 @@ Content-Type | application/json
 
 ```json
 {
-  "statusCode": 200
+  "statusCode": 200,
+  "message": "FAQ deleted"
 }
 ```
 
@@ -189,13 +203,23 @@ property-id | **PROPERTY_ID**
 > Response
 
 ```json
-[
-  {
-    "_id": "q1w2e3r4t5y6u7i8o9p0q1w2",
-    "rule": RULE,
-    "answer": RULE_ANSWER
-  }
-]
+{
+  "statusCode": 200,
+  "message": "Rules list",
+  "data": [
+    {
+      "ruleId": "63996a85-4bfe-4a37-bfb5-a1286b2ac52f",
+      "name": "Pets?",
+      "answer": "no"
+    },
+    {
+      "ruleId": "3871f9a7-daf6-46cf-8486-0c82d1723970",
+      "name": "Can I smoke at home?",
+      "answer": "yes"
+    },
+    ...
+  ]
+}
 ```
 
 Returns all house rules for a given property.
@@ -224,8 +248,13 @@ property-id | **PROPERTY_ID**
 
 ```json
 {
-  "rule": RULE,
-  "answer": RULE_ANSWER
+  "statusCode": 200,
+  "message": "Rule updated",
+  "data": {
+    "ruleId": "63996a85-4bfe-4a37-bfb5-a1286b2ac52f",
+    "name": "Pets?",
+    "answer": "no"
+  }
 }
 ```
 
@@ -233,8 +262,8 @@ property-id | **PROPERTY_ID**
 
 ```json
 {
-  "statusCode": 200
-}
+  "answer": "yes"
+}	
 ```
 
 Updates a house rule for a given property.
@@ -252,7 +281,12 @@ Property    | Value
 ----------- | -------
 api-key     | **API_KEY**
 property-id | **PROPERTY_ID**
-Content-Type | application/json
+
+**Request object parameters**
+
+| param | type | description | required? |
+| ------ | ------ | ------ | ------ |
+| answer | String(5) | Resumed answer for the FAQ item | yes
 
 
 
@@ -265,14 +299,18 @@ Content-Type | application/json
 > Response
 
 ```json
-[
-  {
-    "_id": "q1w2e3r4t5y6u7i8o9p0q1w2",
-    "place": "Walmart",
-    "distance": "5 miles",
-    "time": "6 minutes"
-  }
-]
+{
+  "statusCode": 200,
+  "message": "Places list",
+  "data": [
+    {
+      "place": "Pool",
+      "distance": "Walking distance",
+      "time": "2 minutes"
+    },
+    ...
+  ]
+}
 ```
 
 Returns all nearby places for a given property.
@@ -311,9 +349,10 @@ property-id | **PROPERTY_ID**
 
 ```json
 {
-  "statusCode": 200,
+  "statusCode": 201,
+  "message": "Place created",
   "data": {
-    "_id": "q1w2e3r4t5y6u7i9o9p0q9f4",
+    "placeId": "e541ea21-60d5-43e0-b41d-9ad002255245",
     "place": "Pool",
     "distance": "Walking distance",
     "time": "2 minutes"
@@ -336,9 +375,16 @@ Property    | Value
 ----------- | -------
 api-key     | **API_KEY**
 property-id | **PROPERTY_ID**
-Content-Type | application/json
 
+**Request object parameters**
 
+| param | type | description | required? |
+| ------ | ------ | ------ | ------ |
+| place | String(400) | The name of the place nearby property | yes
+| distance | String(255) | How far for the place in miles, kilometers or even steps | yes
+| time | String(255) | How long to reach the place in hours, minutes, etc | yes
+
+Observation: The **distance** or **time** parameters must be in the request. But offcourse, booth parameters should be passed to.
 
 
 
@@ -348,9 +394,9 @@ Content-Type | application/json
 
 ```json
 {
-  "place": "Walmart",
-  "distance": "5 miles",
-  "time": "6 minutes"
+  "place": "Pool",
+  "distance": "Walking distance",
+  "time": "2 minutes"
 }
 ```
 
@@ -358,11 +404,18 @@ Content-Type | application/json
 
 ```json
 {
-  "statusCode": 200
+  "statusCode": 200,
+  "message": "Place updated",
+  "data": {
+    "placeId": "e541ea21-60d5-43e0-b41d-9ad002255245",
+    "place": "Pool",
+    "distance": "Walking distance",
+    "time": "2 minutes"
+  }
 }
 ```
 
-Updates a nearby palce for a given property.
+Updates a nearby place for a given property.
 
 **Request**
 
@@ -377,9 +430,16 @@ Property    | Value
 ----------- | -------
 api-key     | **API_KEY**
 property-id | **PROPERTY_ID**
-Content-Type | application/json
 
+**Request object parameters**
 
+| param | type | description | required? |
+| ------ | ------ | ------ | ------ |
+| place | String(400) | The name of the place nearby property | yes
+| distance | String(255) | How far for the place in miles, kilometers or even steps | yes
+| time | String(255) | How long to reach the place in hours, minutes, etc | yes
+
+Observation: The **distance** or **time** parameters must be in the request. But offcourse, booth parameters should be passed to.
 
 
 
@@ -389,7 +449,8 @@ Content-Type | application/json
 
 ```json
 {
-  "statusCode": 200
+  "statusCode": 200,
+  "message": "Place deleted"
 }
 ```
 
