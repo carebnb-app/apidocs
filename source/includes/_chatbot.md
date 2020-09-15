@@ -148,19 +148,19 @@ Property | Value
 Endpoint | /faq/faqId/**FAQ_ID**
 Method   | PUT
 
-**Request Headers**
-
-Property    | Value
------------ | -------
-api-key     | **API_KEY**
-property-id | **PROPERTY_ID**
-
 **Request object parameters**
 
 | param | type | description | required? |
 | ------ | ------ | ------ | ------ |
 | question | String(4000) | The most apropriated question title | yes
 | answer | String(4000) | Resumed answer for the FAQ item | yes
+
+**Request Headers**
+
+Property    | Value
+----------- | -------
+api-key     | **API_KEY**
+property-id | **PROPERTY_ID**
 
 
 
@@ -275,18 +275,18 @@ Property | Value
 Endpoint | /rule/ruleId/**RULE_ID**
 Method   | PUT
 
+**Request object parameters**
+
+| param | type | description | required? |
+| ------ | ------ | ------ | ------ |
+| answer | String(5) | Resumed answer for the FAQ item | yes
+
 **Request Headers**
 
 Property    | Value
 ----------- | -------
 api-key     | **API_KEY**
 property-id | **PROPERTY_ID**
-
-**Request object parameters**
-
-| param | type | description | required? |
-| ------ | ------ | ------ | ------ |
-| answer | String(5) | Resumed answer for the FAQ item | yes
 
 
 
@@ -369,13 +369,6 @@ Property | Value
 Endpoint | /place
 Method   | POST
 
-**Request Headers**
-
-Property    | Value
------------ | -------
-api-key     | **API_KEY**
-property-id | **PROPERTY_ID**
-
 **Request object parameters**
 
 | param | type | description | required? |
@@ -385,6 +378,13 @@ property-id | **PROPERTY_ID**
 | time | String(255) | How long to reach the place in hours, minutes, etc | yes
 
 Observation: The **distance** or **time** parameters must be in the request. But offcourse, booth parameters should be passed to.
+
+**Request Headers**
+
+Property    | Value
+----------- | -------
+api-key     | **API_KEY**
+property-id | **PROPERTY_ID**
 
 
 
@@ -424,13 +424,6 @@ Property | Value
 Endpoint | /place/placeId/**PLACE_ID**
 Method   | PUT
 
-**Request Headers**
-
-Property    | Value
------------ | -------
-api-key     | **API_KEY**
-property-id | **PROPERTY_ID**
-
 **Request object parameters**
 
 | param | type | description | required? |
@@ -440,6 +433,13 @@ property-id | **PROPERTY_ID**
 | time | String(255) | How long to reach the place in hours, minutes, etc | yes
 
 Observation: The **distance** or **time** parameters must be in the request. But offcourse, booth parameters should be passed to.
+
+**Request Headers**
+
+Property    | Value
+----------- | -------
+api-key     | **API_KEY**
+property-id | **PROPERTY_ID**
 
 
 

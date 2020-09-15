@@ -95,9 +95,7 @@ property-id | **PROPERTY_ID**
   "data":{
     "messageId":"q1w2e3r4t5y6u7i8o9p0q1w2",
     "message":"Updated message. Hi {guestName},\n\nThanks for choosing us.\n\nI'm Carebnb...",
-    "event":"introduction",
-    "createdAt":"2020-01-01T00:00:00.000Z",
-    "updatedAt":"2020-01-01T00:00:00.000Z"
+    "event":"introduction"
   }
 }
 ```
@@ -119,7 +117,6 @@ Property    | Value
 api-key | **API_KEY**
 user-id | **USER_ID**
 property-id | **PROPERTY_ID**
-Content-Type | application/json
 
 This type of message can't be deleted.
 
@@ -220,7 +217,6 @@ Property    | Value
 api-key | **API_KEY**
 user-id | **USER_ID**
 property-id | **PROPERTY_ID**
-Content-Type | application/json
 
 
 
@@ -261,9 +257,7 @@ Content-Type | application/json
           "10:00"
         ]
       }
-    ],
-    "createdAt":"2020-01-01T00:00:00.000Z",
-    "updatedAt":"2020-01-01T00:00:00.000Z"
+    ]
   }
 }
 ```
@@ -285,7 +279,6 @@ Property    | Value
 api-key | **API_KEY**
 user-id | **USER_ID**
 property-id | **PROPERTY_ID**
-Content-Type | application/json
 
 
 
@@ -402,7 +395,6 @@ Property    | Value
 api-key | **API_KEY**
 user-id | **USER_ID**
 property-id | **PROPERTY_ID**
-Content-Type | application/json
 
 
 
@@ -428,10 +420,8 @@ Content-Type | application/json
   "data":{
     "messageId":"q1w2e3r4t5y6u7i8o9p0q1w2",
     "message":"Updated message for {guestName}.\n\n\natt,\n {hostName} ...",
-    "event":EVENT_TYPE,
-    "reminderPeriod":"-P1D",
-    "createdAt":"2020-01-01T00:00:00.000Z",
-    "updatedAt":"2020-01-01T00:00:00.000Z"
+    "event":"checkin",
+    "reminderPeriod":"-P1D"
   }
 }
 ```
@@ -453,7 +443,6 @@ Property    | Value
 api-key | **API_KEY**
 user-id | **USER_ID**
 property-id | **PROPERTY_ID**
-Content-Type | application/json
 
 
 
