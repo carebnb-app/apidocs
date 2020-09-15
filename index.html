@@ -699,7 +699,8 @@ In this section, We describe all endpoints for this mean.</p>
             </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Happy street at 5th avenue"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"countryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"zipCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"71.672-188"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -743,9 +744,9 @@ These users will be the &quot;owners&quot; of properties.</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Users info"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User info"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"79d76f9b-5a2e-4933-8741-..."</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"79d76f9b-5a2e-4933-8741-9123812..."</span><span class="p">,</span><span class="w">
         </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@mail.co"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"birthDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1990-01-01"</span><span class="p">,</span><span class="w">
@@ -846,24 +847,6 @@ This user will be the &quot;owner&quot; of properties.</p>
 </tr>
 </tbody></table>
 
-<p><strong>Request Headers</strong></p>
-
-<table><thead>
-<tr>
-<th>Property</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>api-key</td>
-<td><strong>API_KEY</strong></td>
-</tr>
-<tr>
-<td>Content-Type</td>
-<td>application/json</td>
-</tr>
-</tbody></table>
-
 <p><strong>Request object params</strong></p>
 
 <table><thead>
@@ -921,6 +904,20 @@ This user will be the &quot;owner&quot; of properties.</p>
 <td>String(32)</td>
 <td>Obeying each country specification.</td>
 <td>-</td>
+</tr>
+</tbody></table>
+
+<p><strong>Request Headers</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api-key</td>
+<td><strong>API_KEY</strong></td>
 </tr>
 </tbody></table>
 <h3 id='update'>Update</h3>
@@ -978,24 +975,6 @@ This user will be the &quot;owner&quot; of properties.</p>
 </tr>
 </tbody></table>
 
-<p><strong>Request Headers</strong></p>
-
-<table><thead>
-<tr>
-<th>Property</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>api-key</td>
-<td><strong>API_KEY</strong></td>
-</tr>
-<tr>
-<td>Content-Type</td>
-<td>application/json</td>
-</tr>
-</tbody></table>
-
 <p><strong>Request object params</strong></p>
 
 <table><thead>
@@ -1055,6 +1034,20 @@ This user will be the &quot;owner&quot; of properties.</p>
 <td>-</td>
 </tr>
 </tbody></table>
+
+<p><strong>Request Headers</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api-key</td>
+<td><strong>API_KEY</strong></td>
+</tr>
+</tbody></table>
 <h3 id='delete'>Delete</h3>
 <blockquote>
 <p>Response</p>
@@ -1102,7 +1095,22 @@ A user cannot be deleted if it owns a property.</p>
 <blockquote>
 <p>Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">@TODO</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Properties list"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"propertyId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ce155e19-66f1-4f64-9aa2-..."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cozy three bedrooms apartment"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"coverImage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://a0.muscache.com/im/pictures/3ff8e57d-59c9-4193-a6c1-c89f2be79ea2.jpg?aki_policy=medium"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4 Rue Marie France, Canton-Tremblay, QC G7G 4N4, Canada"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"countryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timeZoneName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/New_York"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"zipCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"G7G 4N4"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Returns all properties (listings).</p>
 
@@ -1141,7 +1149,24 @@ A user cannot be deleted if it owns a property.</p>
 <blockquote>
 <p>Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">@TODO</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Users list"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"79d76f9b-5a2e-4933-8741-ad7bb09bc..."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@mail.co"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"birthDate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"male"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"cellphone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"991321321"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"countryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"timeZoneName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/New_York"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"zipCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"G7G 4N4"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Returns all properties associated to a user, normally a host.</p>
 
@@ -1180,7 +1205,19 @@ A user cannot be deleted if it owns a property.</p>
 <blockquote>
 <p>Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">@TODO</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Property info"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"propertyId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"76e122d8-3bb7-4e0e-843c-..."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cozy three bedrooms apartment"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"coverImage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://a0.muscache.com/im/pictures/3ff8e57d-59c9-4193-a6c1-c89f2be79ea2.jpg?aki_policy=medium"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4 Rue Marie France, Canton-Tremblay, QC G7G 4N4, Canada"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"countryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timeZoneName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/New_York"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"zipCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"G7G 4N4"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Returns a property associated to a user, normally a host.</p>
 
@@ -1220,7 +1257,7 @@ A user cannot be deleted if it owns a property.</p>
 <p>Request body</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"q1w2e3r4-t5y6-u7i8-o9p0-q1e3t5u7i8o9"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"q1w2e3r4-t5y6-u7i8-o9p0-q1e3t5u7i..."</span><span class="p">,</span><span class="w">
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cozy Townhome + Hotel Standard w/amenities"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.airbnb.ca/rooms/123623562"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jacksonville, Florida, United States"</span><span class="p">,</span><span class="w">
@@ -1231,7 +1268,15 @@ A user cannot be deleted if it owns a property.</p>
 <blockquote>
 <p>Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">@TODO</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"76e122d8-3bb7-4e0e-843c-e26fc0932..."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cozy Townhome + Hotel Standard w/amenities"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"coverImage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://a0.muscache.com/im/pictures/3ff8e57d-59c9-4193-a6c1-c89f2be79ea2.jpg?aki_policy=medium"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timeZoneName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/California"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jacksonville, Florida, United States"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"countryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"zipCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9035"</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Creates property associated to a user, normally a host.</p>
 
@@ -1253,24 +1298,6 @@ A user cannot be deleted if it owns a property.</p>
 </tr>
 </tbody></table>
 
-<p><strong>Request Headers</strong></p>
-
-<table><thead>
-<tr>
-<th>Property</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>api-key</td>
-<td><strong>API_KEY</strong></td>
-</tr>
-<tr>
-<td>Content-Type</td>
-<td>application/json</td>
-</tr>
-</tbody></table>
-
 <p><strong>Request object params</strong></p>
 
 <table><thead>
@@ -1324,12 +1351,26 @@ A user cannot be deleted if it owns a property.</p>
 <td>-</td>
 </tr>
 </tbody></table>
+
+<p><strong>Request Headers</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api-key</td>
+<td><strong>API_KEY</strong></td>
+</tr>
+</tbody></table>
 <h3 id='update-2'>Update</h3>
 <blockquote>
 <p>Request body</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"q1w2e3r4-t5y6-u7i8-o9p0-q1e3t5u7i8o9"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"q1w2e3r4-t5y6-u7i8-o9p0-q1e3t5u7i..."</span><span class="p">,</span><span class="w">
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cozy Townhome + Hotel Standard w/amenities"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.airbnb.ca/rooms/123623562"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jacksonville, Florida, United States"</span><span class="p">,</span><span class="w">
@@ -1340,7 +1381,15 @@ A user cannot be deleted if it owns a property.</p>
 <blockquote>
 <p>Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">@TODO</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"76e122d8-3bb7-4e0e-843c-e26fc0931..."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cozy Townhome + Hotel Standard w/amenities"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"coverImage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://a0.muscache.com/im/pictures/3ff8e57d-59c9-4193-a6c1-c89f2be79ea2.jpg?aki_policy=medium"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timeZoneName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/California"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jacksonville, Florida, United States"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"countryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"zipCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9035"</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Updates a property associated to a user, normally a host.</p>
 
@@ -1362,24 +1411,6 @@ A user cannot be deleted if it owns a property.</p>
 </tr>
 </tbody></table>
 
-<p><strong>Request Headers</strong></p>
-
-<table><thead>
-<tr>
-<th>Property</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>api-key</td>
-<td><strong>API_KEY</strong></td>
-</tr>
-<tr>
-<td>Content-Type</td>
-<td>application/json</td>
-</tr>
-</tbody></table>
-
 <p><strong>Request object params</strong></p>
 
 <table><thead>
@@ -1433,11 +1464,28 @@ A user cannot be deleted if it owns a property.</p>
 <td>-</td>
 </tr>
 </tbody></table>
+
+<p><strong>Request Headers</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api-key</td>
+<td><strong>API_KEY</strong></td>
+</tr>
+</tbody></table>
 <h3 id='delete-2'>Delete</h3>
 <blockquote>
 <p>Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">@TODO</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Property deleted"</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Deletes a property associated to a user, normally a host.</p>
 
@@ -1491,7 +1539,8 @@ A user cannot be deleted if it owns a property.</p>
       </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Automatic check in check out"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.messages.carebnb.app"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -1637,10 +1686,6 @@ A user cannot be deleted if it owns a property.</p>
 <td>property-id</td>
 <td><strong>PROPERTY_ID</strong></td>
 </tr>
-<tr>
-<td>Content-Type</td>
-<td>application/json</td>
-</tr>
 </tbody></table>
 <h3 id='disable'>Disable</h3>
 <blockquote>
@@ -1694,10 +1739,6 @@ A user cannot be deleted if it owns a property.</p>
 <tr>
 <td>property-id</td>
 <td><strong>PROPERTY_ID</strong></td>
-</tr>
-<tr>
-<td>Content-Type</td>
-<td>application/json</td>
 </tr>
 </tbody></table>
 <h1 id='automatic-check-in-check-out'>Automatic check in check out</h1>
@@ -1774,7 +1815,7 @@ Values on the left column are replaced by values on the second one in any messag
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
-    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="s2">"1b2d8387-d46c-4344-a4d6-8b62d0d0a..."</span><span class="p">,</span><span class="w">
     </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Hi {guestName},</span><span class="se">\n\n</span><span class="s2">Thanks for choosing us.</span><span class="se">\n\n</span><span class="s2">I'm Carebnb..."</span><span class="p">,</span><span class="w">
     </span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"introduction"</span><span class="w">
   </span><span class="p">}</span><span class="w">
@@ -1837,11 +1878,9 @@ This is the message sent to guests at the moment a new reservation is detected</
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
-    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="s2">"1b2d8387-d46c-4344-a4d6-8b62d0d0a..."</span><span class="p">,</span><span class="w">
     </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Updated message. Hi {guestName},</span><span class="se">\n\n</span><span class="s2">Thanks for choosing us.</span><span class="se">\n\n</span><span class="s2">I'm Carebnb..."</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"introduction"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="w">
+    </span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"introduction"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -1886,10 +1925,6 @@ This is the message sent to guests at the moment a new reservation is detected</
 <td>property-id</td>
 <td><strong>PROPERTY_ID</strong></td>
 </tr>
-<tr>
-<td>Content-Type</td>
-<td>application/json</td>
-</tr>
 </tbody></table>
 
 <p>This type of message can&#39;t be deleted.</p>
@@ -1901,7 +1936,7 @@ This is the message sent to guests at the moment a new reservation is detected</
   </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"messageId"</span><span class="p">:</span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"messageId"</span><span class="p">:</span><span class="s2">"1b2d8387-d46c-4344-a4d6-8b62d0d0a..."</span><span class="p">,</span><span class="w">
       </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"It's trash day.</span><span class="se">\n\n</span><span class="s2">Hi  {guestName}, please ..."</span><span class="p">,</span><span class="w">
       </span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"scheduled"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"reminderSchedule"</span><span class="p">:[</span><span class="w">
@@ -1912,7 +1947,8 @@ This is the message sent to guests at the moment a new reservation is detected</
           </span><span class="p">]</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -2023,10 +2059,6 @@ This type of message is sent to guests based on the day of the week.</p>
 <td>property-id</td>
 <td><strong>PROPERTY_ID</strong></td>
 </tr>
-<tr>
-<td>Content-Type</td>
-<td>application/json</td>
-</tr>
 </tbody></table>
 <h3 id='update-4'>Update</h3>
 <blockquote>
@@ -2051,7 +2083,7 @@ This type of message is sent to guests based on the day of the week.</p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
-    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="s2">"1b2d8387-d46c-4344-a4d6-8b62d0d0a..."</span><span class="p">,</span><span class="w">
     </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Updated message for {guestName}.</span><span class="se">\n\n\n</span><span class="s2">att,</span><span class="se">\n</span><span class="s2"> {hostName} ..."</span><span class="p">,</span><span class="w">
     </span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"scheduled"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"reminderSchedule"</span><span class="p">:[</span><span class="w">
@@ -2061,9 +2093,7 @@ This type of message is sent to guests based on the day of the week.</p>
           </span><span class="s2">"10:00"</span><span class="w">
         </span><span class="p">]</span><span class="w">
       </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -2107,10 +2137,6 @@ This type of message is sent to guests based on the day of the week.</p>
 <tr>
 <td>property-id</td>
 <td><strong>PROPERTY_ID</strong></td>
-</tr>
-<tr>
-<td>Content-Type</td>
-<td>application/json</td>
 </tr>
 </tbody></table>
 <h3 id='delete-3'>Delete</h3>
@@ -2171,11 +2197,12 @@ This type of message is sent to guests based on the day of the week.</p>
   </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"messageId"</span><span class="p">:</span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"messageId"</span><span class="p">:</span><span class="s2">"1b2d8387-d46c-4344-a4d6-8b62d0d0a..."</span><span class="p">,</span><span class="w">
       </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"It's trash day.</span><span class="se">\n\n</span><span class="s2">Hi  {guestName}, please ..."</span><span class="p">,</span><span class="w">
       </span><span class="nl">"event"</span><span class="p">:</span><span class="err">EVENT_TYPE</span><span class="p">,</span><span class="w">
       </span><span class="nl">"reminderPeriod"</span><span class="p">:</span><span class="s2">"P1D"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -2279,10 +2306,6 @@ This type of message is sent to guests based on check in check out date.</p>
 <td>property-id</td>
 <td><strong>PROPERTY_ID</strong></td>
 </tr>
-<tr>
-<td>Content-Type</td>
-<td>application/json</td>
-</tr>
 </tbody></table>
 <h3 id='update-5'>Update</h3>
 <blockquote>
@@ -2300,12 +2323,10 @@ This type of message is sent to guests based on check in check out date.</p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
-    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="s2">"1b2d8387-d46c-4344-a4d6-8b62d0d0a..."</span><span class="p">,</span><span class="w">
     </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Updated message for {guestName}.</span><span class="se">\n\n\n</span><span class="s2">att,</span><span class="se">\n</span><span class="s2"> {hostName} ..."</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"event"</span><span class="p">:</span><span class="err">EVENT_TYPE</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"reminderPeriod"</span><span class="p">:</span><span class="s2">"-P1D"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="w">
+    </span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"checkin"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"reminderPeriod"</span><span class="p">:</span><span class="s2">"-P1D"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -2349,10 +2370,6 @@ This type of message is sent to guests based on check in check out date.</p>
 <tr>
 <td>property-id</td>
 <td><strong>PROPERTY_ID</strong></td>
-</tr>
-<tr>
-<td>Content-Type</td>
-<td>application/json</td>
 </tr>
 </tbody></table>
 <h3 id='delete-4'>Delete</h3>
@@ -2435,7 +2452,7 @@ This type of message is sent to guests based on check in check out date.</p>
 </tr>
 <tr>
 <td>RULE</td>
-<td>A list of all rules is retrieved by &quot;Get all&quot; in &quot;Rouse rules&quot; section</td>
+<td>A list of all rules is retrieved by &quot;Get all&quot; in &quot;House rules&quot; section</td>
 </tr>
 <tr>
 <td>RULE_ANSWER</td>
@@ -2446,13 +2463,18 @@ This type of message is sent to guests based on check in check out date.</p>
 <blockquote>
 <p>Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"How can I...?"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Easy, you can just..."</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FAQs list"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"faqId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7b02c6af-aff6-4f61-9508-b0259908d..."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"How can I...?"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Easy, you can just..."</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Returns all frequently asked questions for a given property.</p>
 
@@ -2498,15 +2520,16 @@ This type of message is sent to guests based on check in check out date.</p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"How can I...?"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Easy, you can just..."</span><span class="w">
-</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">   
 </span></code></pre></div>
 <blockquote>
 <p>Response</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">201</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FAQ created"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"faqId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7b02c6af-aff6-4f61-9508-b0259908d..."</span><span class="p">,</span><span class="w">
     </span><span class="nl">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"How can I...?"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Easy, you can just..."</span><span class="w">
   </span><span class="p">}</span><span class="w">
@@ -2532,6 +2555,30 @@ This type of message is sent to guests based on check in check out date.</p>
 </tr>
 </tbody></table>
 
+<p><strong>Request object parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>param</th>
+<th>type</th>
+<th>description</th>
+<th>required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>question</td>
+<td>String(4000)</td>
+<td>The most apropriated question title</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>answer</td>
+<td>String(4000)</td>
+<td>Resumed answer for the FAQ item</td>
+<td>yes</td>
+</tr>
+</tbody></table>
+
 <p><strong>Request Headers</strong></p>
 
 <table><thead>
@@ -2548,10 +2595,6 @@ This type of message is sent to guests based on check in check out date.</p>
 <td>property-id</td>
 <td><strong>PROPERTY_ID</strong></td>
 </tr>
-<tr>
-<td>Content-Type</td>
-<td>application/json</td>
-</tr>
 </tbody></table>
 <h3 id='update-6'>Update</h3>
 <blockquote>
@@ -2560,19 +2603,18 @@ This type of message is sent to guests based on check in check out date.</p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"How can I...?"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Easy, you can just..."</span><span class="w">
-</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">   
 </span></code></pre></div>
 <blockquote>
 <p>Response</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
-    </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FAQ updated"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"faqId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7b02c6af-aff6-4f61-9508-b0259908d..."</span><span class="p">,</span><span class="w">
     </span><span class="nl">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"How can I...?"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Easy, you can just..."</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="w">
+    </span><span class="nl">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Easy, you can just..."</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -2596,6 +2638,30 @@ This type of message is sent to guests based on check in check out date.</p>
 </tr>
 </tbody></table>
 
+<p><strong>Request object parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>param</th>
+<th>type</th>
+<th>description</th>
+<th>required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>question</td>
+<td>String(4000)</td>
+<td>The most apropriated question title</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>answer</td>
+<td>String(4000)</td>
+<td>Resumed answer for the FAQ item</td>
+<td>yes</td>
+</tr>
+</tbody></table>
+
 <p><strong>Request Headers</strong></p>
 
 <table><thead>
@@ -2612,17 +2678,14 @@ This type of message is sent to guests based on check in check out date.</p>
 <td>property-id</td>
 <td><strong>PROPERTY_ID</strong></td>
 </tr>
-<tr>
-<td>Content-Type</td>
-<td>application/json</td>
-</tr>
 </tbody></table>
 <h3 id='delete-5'>Delete</h3>
 <blockquote>
 <p>Response</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FAQ deleted"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Removes a frequently asked question for a given property.</p>
@@ -2666,13 +2729,23 @@ This type of message is sent to guests based on check in check out date.</p>
 <blockquote>
 <p>Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"rule"</span><span class="p">:</span><span class="w"> </span><span class="err">RULE</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"answer"</span><span class="p">:</span><span class="w"> </span><span class="err">RULE_ANSWER</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rules list"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"ruleId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63996a85-4bfe-4a37-bfb5-a1286b2ac..."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pets?"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"ruleId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3871f9a7-daf6-46cf-8486-0c82d1723..."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Can I smoke at home?"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yes"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Returns all house rules for a given property.</p>
 
@@ -2716,16 +2789,21 @@ This type of message is sent to guests based on check in check out date.</p>
 <p>Request body</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"rule"</span><span class="p">:</span><span class="w"> </span><span class="err">RULE</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"answer"</span><span class="p">:</span><span class="w"> </span><span class="err">RULE_ANSWER</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rule updated"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"ruleId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63996a85-4bfe-4a37-bfb5-a1286b2ac..."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pets?"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <blockquote>
 <p>Response</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
-</span><span class="p">}</span><span class="w">
+  </span><span class="nl">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yes"</span><span class="w">
+</span><span class="p">}</span><span class="w">   
 </span></code></pre></div>
 <p>Updates a house rule for a given property.</p>
 
@@ -2747,6 +2825,24 @@ This type of message is sent to guests based on check in check out date.</p>
 </tr>
 </tbody></table>
 
+<p><strong>Request object parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>param</th>
+<th>type</th>
+<th>description</th>
+<th>required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>answer</td>
+<td>String(5)</td>
+<td>Resumed answer for the FAQ item</td>
+<td>yes</td>
+</tr>
+</tbody></table>
+
 <p><strong>Request Headers</strong></p>
 
 <table><thead>
@@ -2763,23 +2859,23 @@ This type of message is sent to guests based on check in check out date.</p>
 <td>property-id</td>
 <td><strong>PROPERTY_ID</strong></td>
 </tr>
-<tr>
-<td>Content-Type</td>
-<td>application/json</td>
-</tr>
 </tbody></table>
 <h2 id='nearby-places'>Nearby places</h2><h3 id='get-all-8'>Get all</h3>
 <blockquote>
 <p>Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"place"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Walmart"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"distance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5 miles"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6 minutes"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Places list"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"place"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pool"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"distance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Walking distance"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2 minutes"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Returns all nearby places for a given property.</p>
 
@@ -2832,9 +2928,10 @@ This type of message is sent to guests based on check in check out date.</p>
 <p>Response</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">201</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Place created"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"q1w2e3r4t5y6u7i9o9p0q9f4"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"placeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e541ea21-60d5-43e0-b41d-9ad002255..."</span><span class="p">,</span><span class="w">
     </span><span class="nl">"place"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pool"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"distance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Walking distance"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2 minutes"</span><span class="w">
@@ -2861,6 +2958,38 @@ This type of message is sent to guests based on check in check out date.</p>
 </tr>
 </tbody></table>
 
+<p><strong>Request object parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>param</th>
+<th>type</th>
+<th>description</th>
+<th>required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>place</td>
+<td>String(400)</td>
+<td>The name of the place nearby property</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>distance</td>
+<td>String(255)</td>
+<td>How far for the place in miles, kilometers or even steps</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>time</td>
+<td>String(255)</td>
+<td>How long to reach the place in hours, minutes, etc</td>
+<td>yes</td>
+</tr>
+</tbody></table>
+
+<p>Observation: The <strong>distance</strong> or <strong>time</strong> parameters must be in the request. But offcourse, booth parameters should be passed to.</p>
+
 <p><strong>Request Headers</strong></p>
 
 <table><thead>
@@ -2877,29 +3006,32 @@ This type of message is sent to guests based on check in check out date.</p>
 <td>property-id</td>
 <td><strong>PROPERTY_ID</strong></td>
 </tr>
-<tr>
-<td>Content-Type</td>
-<td>application/json</td>
-</tr>
 </tbody></table>
 <h3 id='update-8'>Update</h3>
 <blockquote>
 <p>Request body</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"place"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Walmart"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"distance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5 miles"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6 minutes"</span><span class="w">
+  </span><span class="nl">"place"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pool"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"distance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Walking distance"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2 minutes"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <blockquote>
 <p>Response</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Place updated"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"placeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e541ea21-60d5-43e0-b41d-9ad002255..."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"place"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pool"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"distance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Walking distance"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2 minutes"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Updates a nearby palce for a given property.</p>
+<p>Updates a nearby place for a given property.</p>
 
 <p><strong>Request</strong></p>
 
@@ -2919,6 +3051,38 @@ This type of message is sent to guests based on check in check out date.</p>
 </tr>
 </tbody></table>
 
+<p><strong>Request object parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>param</th>
+<th>type</th>
+<th>description</th>
+<th>required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>place</td>
+<td>String(400)</td>
+<td>The name of the place nearby property</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>distance</td>
+<td>String(255)</td>
+<td>How far for the place in miles, kilometers or even steps</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>time</td>
+<td>String(255)</td>
+<td>How long to reach the place in hours, minutes, etc</td>
+<td>yes</td>
+</tr>
+</tbody></table>
+
+<p>Observation: The <strong>distance</strong> or <strong>time</strong> parameters must be in the request. But offcourse, booth parameters should be passed to.</p>
+
 <p><strong>Request Headers</strong></p>
 
 <table><thead>
@@ -2935,17 +3099,14 @@ This type of message is sent to guests based on check in check out date.</p>
 <td>property-id</td>
 <td><strong>PROPERTY_ID</strong></td>
 </tr>
-<tr>
-<td>Content-Type</td>
-<td>application/json</td>
-</tr>
 </tbody></table>
 <h3 id='delete-6'>Delete</h3>
 <blockquote>
 <p>Response</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Place deleted"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Removes a nearby place for a given property.</p>
@@ -3061,7 +3222,7 @@ Values on the left column are replaced by values on the second one in any messag
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
-    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="s2">"e7ac8705-a7c1-4f2c-8e32-036daaa30..."</span><span class="p">,</span><span class="w">
     </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Hi {guestName},</span><span class="se">\n\n</span><span class="s2">Thanks for choosing us.</span><span class="se">\n\n</span><span class="s2">I'm Carebnb..."</span><span class="p">,</span><span class="w">
     </span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"introduction"</span><span class="w">
   </span><span class="p">}</span><span class="w">
@@ -3124,11 +3285,9 @@ This is the message sent to guests at the moment a new reservation is detected</
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
-    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="s2">"e7ac8705-a7c1-4f2c-8e32-036daaa30..."</span><span class="p">,</span><span class="w">
     </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Updated message. Hi {guestName},</span><span class="se">\n\n</span><span class="s2">Thanks for choosing us.</span><span class="se">\n\n</span><span class="s2">I'm Carebnb..."</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"introduction"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="w">
+    </span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"introduction"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -3173,10 +3332,6 @@ This is the message sent to guests at the moment a new reservation is detected</
 <td>property-id</td>
 <td><strong>PROPERTY_ID</strong></td>
 </tr>
-<tr>
-<td>Content-Type</td>
-<td>application/json</td>
-</tr>
 </tbody></table>
 
 <p>This type of message can&#39;t be deleted.</p>
@@ -3188,7 +3343,7 @@ This is the message sent to guests at the moment a new reservation is detected</
   </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"messageId"</span><span class="p">:</span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"messageId"</span><span class="p">:</span><span class="s2">"e7ac8705-a7c1-4f2c-8e32-036daaa30..."</span><span class="p">,</span><span class="w">
       </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"It's trash day.</span><span class="se">\n\n</span><span class="s2">Hi  {guestName}, please ..."</span><span class="p">,</span><span class="w">
       </span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"scheduled"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"reminderSchedule"</span><span class="p">:[</span><span class="w">
@@ -3199,7 +3354,8 @@ This is the message sent to guests at the moment a new reservation is detected</
           </span><span class="p">]</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -3310,10 +3466,6 @@ This type of message is sent to guests based on the day of the week.</p>
 <td>property-id</td>
 <td><strong>PROPERTY_ID</strong></td>
 </tr>
-<tr>
-<td>Content-Type</td>
-<td>application/json</td>
-</tr>
 </tbody></table>
 <h3 id='update-10'>Update</h3>
 <blockquote>
@@ -3338,7 +3490,7 @@ This type of message is sent to guests based on the day of the week.</p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
-    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="s2">"e7ac8705-a7c1-4f2c-8e32-036daaa30..."</span><span class="p">,</span><span class="w">
     </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Updated message for {guestName}.</span><span class="se">\n\n\n</span><span class="s2">att,</span><span class="se">\n</span><span class="s2"> {hostName} ..."</span><span class="p">,</span><span class="w">
     </span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"scheduled"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"reminderSchedule"</span><span class="p">:[</span><span class="w">
@@ -3348,9 +3500,7 @@ This type of message is sent to guests based on the day of the week.</p>
           </span><span class="s2">"10:00"</span><span class="w">
         </span><span class="p">]</span><span class="w">
       </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -3394,10 +3544,6 @@ This type of message is sent to guests based on the day of the week.</p>
 <tr>
 <td>property-id</td>
 <td><strong>PROPERTY_ID</strong></td>
-</tr>
-<tr>
-<td>Content-Type</td>
-<td>application/json</td>
 </tr>
 </tbody></table>
 <h3 id='delete-7'>Delete</h3>
@@ -3458,11 +3604,12 @@ This type of message is sent to guests based on the day of the week.</p>
   </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"messageId"</span><span class="p">:</span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"messageId"</span><span class="p">:</span><span class="s2">"e7ac8705-a7c1-4f2c-8e32-036daaa30..."</span><span class="p">,</span><span class="w">
       </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"It's trash day.</span><span class="se">\n\n</span><span class="s2">Hi  {guestName}, please ..."</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"event"</span><span class="p">:</span><span class="err">EVENT_TYPE</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"introduction"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"reminderPeriod"</span><span class="p">:</span><span class="s2">"P1D"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -3566,10 +3713,6 @@ This type of message is sent to guests based on check in check out date.</p>
 <td>property-id</td>
 <td><strong>PROPERTY_ID</strong></td>
 </tr>
-<tr>
-<td>Content-Type</td>
-<td>application/json</td>
-</tr>
 </tbody></table>
 <h3 id='update-11'>Update</h3>
 <blockquote>
@@ -3587,12 +3730,10 @@ This type of message is sent to guests based on check in check out date.</p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
-    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="s2">"q1w2e3r4t5y6u7i8o9p0q1w2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="s2">"e7ac8705-a7c1-4f2c-8e32-036daaa30..."</span><span class="p">,</span><span class="w">
     </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Updated message for {guestName}.</span><span class="se">\n\n\n</span><span class="s2">att,</span><span class="se">\n</span><span class="s2"> {hostName} ..."</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"event"</span><span class="p">:</span><span class="err">EVENT_TYPE</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"reminderPeriod"</span><span class="p">:</span><span class="s2">"-P1D"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="w">
+    </span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"introduction"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"reminderPeriod"</span><span class="p">:</span><span class="s2">"-P1D"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -3636,10 +3777,6 @@ This type of message is sent to guests based on check in check out date.</p>
 <tr>
 <td>property-id</td>
 <td><strong>PROPERTY_ID</strong></td>
-</tr>
-<tr>
-<td>Content-Type</td>
-<td>application/json</td>
 </tr>
 </tbody></table>
 <h3 id='delete-8'>Delete</h3>
