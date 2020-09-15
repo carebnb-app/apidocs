@@ -484,3 +484,159 @@ Property    | Value
 ----------- | -------
 api-key | **API_KEY**
 
+
+
+
+## Manage services
+
+### Get all
+
+> Response
+
+```json
+{
+  "statusCode": 200,
+  "message": "Services list",
+  "data": [
+    {
+      "serviceId": "a3921911-2192-4279-99a8-f67c97652...",
+      "description": "Automatic check in check out",
+      "url": "https://api.messages.carebnb.app",
+      "active": true
+		},
+		...
+  ]
+}
+```
+
+Returns all services info by a property.
+
+**Request**
+
+Property | Value
+-------- | -------
+Endpoint | /services
+Method   | GET
+
+**Request Headers**
+
+Property    | Value
+----------- | -------
+api-key | **API_KEY**
+property-id | **PROPERTY_ID**
+
+
+
+
+### Get
+
+> Response
+
+```json
+{
+  "statusCode": 200,
+  "message": "Service info",
+  "data": {
+		"serviceId": "a3921911-2192-4279-99a8-f67c97652...",
+		"description": "Automatic check in check out",
+		"url": "https://api.messages.carebnb.app",
+		"active": true
+	}
+}
+```
+
+Returns a specific service info by a property.
+
+**Request**
+
+Property | Value
+-------- | -------
+Endpoint | /service/serviceId/:serviceId
+Method   | GET
+
+**Request Headers**
+
+Property    | Value
+----------- | -------
+api-key | **API_KEY**
+property-id | **PROPERTY_ID**
+
+
+
+
+
+### Enable
+
+> Response
+
+```json
+{
+  "statusCode": 200,
+  "message": "Service enabled",
+  "data": [
+    {
+      "serviceId": "a3921911-2192-4279-99a8-f67c97652...",
+      "description": "Automatic check in check out",
+      "url": "https://api.messages.carebnb.app",
+      "active": true
+    }
+  ]
+}
+```
+
+Enable a service for a property.
+
+**Request**
+
+Property | Value
+-------- | -------
+Endpoint | /service/enable/serviceId/:serviceId
+Method   | POST
+
+**Request Headers**
+
+Property    | Value
+----------- | -------
+api-key | **API_KEY**
+property-id | **PROPERTY_ID**
+Content-Type | application/json
+
+
+
+
+
+### Disable
+
+> Response
+
+```json
+{
+  "statusCode": 200,
+  "message": "Service disabled",
+  "data": [
+    {
+      "serviceId": "a3921911-2192-4279-99a8-f67c97652...",
+      "description": "Automatic check in check out",
+      "url": "https://api.messages.carebnb.app",
+      "active": false
+    }
+  ]
+}
+```
+
+Disable a service for a property.
+
+**Request**
+
+Property | Value
+-------- | -------
+Endpoint | /service/disable/serviceId/:serviceId
+Method   | POST
+
+**Request Headers**
+
+Property    | Value
+----------- | -------
+api-key | **API_KEY**
+property-id | **PROPERTY_ID**
+Content-Type | application/json
