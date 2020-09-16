@@ -32,7 +32,8 @@ In this section, We describe all endpoints for this mean.
 			"address": "Happy street at 5th avenue",
 			"countryCode": "USA",
 			"zipCode": "71.672-188"
-		}
+		},
+		...
   ]
 }
 ```
@@ -64,9 +65,9 @@ api-key | **API_KEY**
 ```json
 {
   "statusCode": 200,
-  "message": "Users info",
+  "message": "User info",
   "data": {
-		"userId": "79d76f9b-5a2e-4933-8741-...",
+		"userId": "79d76f9b-5a2e-4933-8741-9123812...",
 		"name": "John Doe",
 		"email": "john.doe@mail.co",
 		"birthDate": "1990-01-01",
@@ -146,13 +147,6 @@ Property | Value
 Endpoint | /user
 Method   | POST
 
-**Request Headers**
-
-Property    | Value
------------ | -------
-api-key | **API_KEY**
-Content-Type | application/json
-
 **Request object params**
 
 | param | type | description | required? |
@@ -165,6 +159,12 @@ Content-Type | application/json
 | address | String(64) | Real full street address, no country and no zip code. | -
 | countryCode | String(3) | [ISO 3 format](https://unstats.un.org/unsd/tradekb/knowledgebase/country-code) | -
 | zipCode | String(32) | Obeying each country specification. | -
+
+**Request Headers**
+
+Property    | Value
+----------- | -------
+api-key | **API_KEY**
 
 
 
@@ -217,13 +217,6 @@ Property | Value
 Endpoint | /user/userId/**USER_ID**
 Method   | PUT
 
-**Request Headers**
-
-Property    | Value
------------ | -------
-api-key | **API_KEY**
-Content-Type | application/json
-
 **Request object params**
 
 | param | type | description | required? |
@@ -236,6 +229,12 @@ Content-Type | application/json
 | address | String(64) | Real full street address, no country and no zip code. | -
 | countryCode | String(3) | [ISO 3 format](https://unstats.un.org/unsd/tradekb/knowledgebase/country-code) | -
 | zipCode | String(32) | Obeying each country specification. | -
+
+**Request Headers**
+
+Property    | Value
+----------- | -------
+api-key | **API_KEY**
 
 
 
@@ -279,7 +278,22 @@ api-key | **API_KEY**
 > Response
 
 ```json
-@TODO
+{
+  "statusCode": 200,
+  "message": "Properties list",
+  "data": [
+    {
+      "propertyId": "ce155e19-66f1-4f64-9aa2-...",
+      "description": "Cozy three bedrooms apartment",
+      "coverImage": "https://a0.muscache.com/im/pictures/3ff8e57d-59c9-4193-a6c1-c89f2be79ea2.jpg?aki_policy=medium",
+      "address": "4 Rue Marie France, Canton-Tremblay, QC G7G 4N4, Canada",
+      "countryCode": "CA",
+      "timeZoneName": "America/New_York",
+      "zipCode": "G7G 4N4"
+    },
+    ...
+  ]
+}
 ```
 
 Returns all properties (listings).
@@ -306,7 +320,24 @@ api-key | **API_KEY**
 > Response
 
 ```json
-@TODO
+{
+  "statusCode": 200,
+  "message": "Users list",
+  "data": [
+    {
+      "userId": "79d76f9b-5a2e-4933-8741-ad7bb09bc...",
+      "name": "John Doe",
+      "email": "john.doe@mail.co",
+      "birthDate": null,
+      "gender": "male",
+      "cellphone": "991321321",
+			"countryCode": "CA",
+			"timeZoneName": "America/New_York",
+			"zipCode": "G7G 4N4"
+		},
+		...
+  ]
+}
 ```
 
 Returns all properties associated to a user, normally a host.
@@ -333,7 +364,19 @@ api-key | **API_KEY**
 > Response
 
 ```json
-@TODO
+{
+  "statusCode": 200,
+  "message": "Property info",
+  "data": {
+    "propertyId": "76e122d8-3bb7-4e0e-843c-...",
+    "description": "Cozy three bedrooms apartment",
+    "coverImage": "https://a0.muscache.com/im/pictures/3ff8e57d-59c9-4193-a6c1-c89f2be79ea2.jpg?aki_policy=medium",
+    "address": "4 Rue Marie France, Canton-Tremblay, QC G7G 4N4, Canada",
+    "countryCode": "CA",
+    "timeZoneName": "America/New_York",
+    "zipCode": "G7G 4N4"
+  }
+}
 ```
 
 Returns a property associated to a user, normally a host.
@@ -361,7 +404,7 @@ api-key | **API_KEY**
 
 ```json
 {
-	"userId": "q1w2e3r4-t5y6-u7i8-o9p0-q1e3t5u7i8o9",
+	"userId": "q1w2e3r4-t5y6-u7i8-o9p0-q1e3t5u7i...",
 	"name": "Cozy Townhome + Hotel Standard w/amenities",
 	"url": "https://www.airbnb.ca/rooms/123623562",
 	"address": "Jacksonville, Florida, United States",
@@ -373,7 +416,15 @@ api-key | **API_KEY**
 > Response
 
 ```json
-@TODO
+{
+	"userId": "76e122d8-3bb7-4e0e-843c-e26fc0932...",
+	"description": "Cozy Townhome + Hotel Standard w/amenities",
+	"coverImage": "https://a0.muscache.com/im/pictures/3ff8e57d-59c9-4193-a6c1-c89f2be79ea2.jpg?aki_policy=medium",
+	"timeZoneName": "America/California",
+	"address": "Jacksonville, Florida, United States",
+	"countryCode": "USA",
+	"zipCode": "9035"
+}
 ```
 
 Creates property associated to a user, normally a host.
@@ -385,13 +436,6 @@ Property | Value
 Endpoint | /property
 Method   | POST
 
-**Request Headers**
-
-Property    | Value
------------ | -------
-api-key | **API_KEY**
-Content-Type | application/json
-
 **Request object params**
 
 | param | type | description | required? |
@@ -403,6 +447,12 @@ Content-Type | application/json
 | address | String(64) | Real full street address, no country and no zip code. | -
 | countryCode | String(3) | [ISO 3 format](https://unstats.un.org/unsd/tradekb/knowledgebase/country-code) | -
 | zipCode | String(32) | Obeying each country specification. | -
+
+**Request Headers**
+
+Property    | Value
+----------- | -------
+api-key | **API_KEY**
 
 
 
@@ -414,7 +464,7 @@ Content-Type | application/json
 
 ```json
 {
-	"userId": "q1w2e3r4-t5y6-u7i8-o9p0-q1e3t5u7i8o9",
+	"userId": "q1w2e3r4-t5y6-u7i8-o9p0-q1e3t5u7i...",
 	"name": "Cozy Townhome + Hotel Standard w/amenities",
 	"url": "https://www.airbnb.ca/rooms/123623562",
 	"address": "Jacksonville, Florida, United States",
@@ -426,7 +476,15 @@ Content-Type | application/json
 > Response
 
 ```json
-@TODO
+{
+	"userId": "76e122d8-3bb7-4e0e-843c-e26fc0931...",
+	"description": "Cozy Townhome + Hotel Standard w/amenities",
+	"coverImage": "https://a0.muscache.com/im/pictures/3ff8e57d-59c9-4193-a6c1-c89f2be79ea2.jpg?aki_policy=medium",
+	"timeZoneName": "America/California",
+	"address": "Jacksonville, Florida, United States",
+	"countryCode": "USA",
+	"zipCode": "9035"
+}
 ```
 
 Updates a property associated to a user, normally a host.
@@ -437,13 +495,6 @@ Property | Value
 -------- | -------
 Endpoint | /property/propertyId/**PROPERTY_ID**
 Method   | PUT
-
-**Request Headers**
-
-Property    | Value
------------ | -------
-api-key | **API_KEY**
-Content-Type | application/json
 
 **Request object params**
 
@@ -457,6 +508,12 @@ Content-Type | application/json
 | countryCode | String(3) | [ISO 3 format](https://unstats.un.org/unsd/tradekb/knowledgebase/country-code) | -
 | zipCode | String(32) | Obeying each country specification. | -
 
+**Request Headers**
+
+Property    | Value
+----------- | -------
+api-key | **API_KEY**
+
 
 
 
@@ -466,7 +523,10 @@ Content-Type | application/json
 > Response
 
 ```json
-@TODO
+{
+  "statusCode": 200,
+  "message": "Property deleted"
+}
 ```
 
 Deletes a property associated to a user, normally a host.
@@ -487,7 +547,14 @@ api-key | **API_KEY**
 
 
 
+
 ## Manage services
+
+These are the actions related to checking, enabling or disabling services for a given property.
+
+<aside class="notice">
+  All operations here are "by property". Which means, the PROPERTY_ID value must be passed to every call.
+</aside>
 
 ### Get all
 
@@ -509,7 +576,7 @@ api-key | **API_KEY**
 }
 ```
 
-Returns all services info by a property.
+Returns all services associated to a property.
 
 **Request**
 
@@ -545,13 +612,13 @@ property-id | **PROPERTY_ID**
 }
 ```
 
-Returns a specific service info by a property.
+Returns info and status of a specific service associated to a property.
 
 **Request**
 
 Property | Value
 -------- | -------
-Endpoint | /service/serviceId/:serviceId
+Endpoint | /service/serviceId/**SERVICE_ID**
 Method   | GET
 
 **Request Headers**
@@ -584,13 +651,13 @@ property-id | **PROPERTY_ID**
 }
 ```
 
-Enable a service for a property.
+Enable a service associated to a property.
 
 **Request**
 
 Property | Value
 -------- | -------
-Endpoint | /service/enable/serviceId/:serviceId
+Endpoint | /service/enable/serviceId/**SERVICE_ID**
 Method   | POST
 
 **Request Headers**
@@ -599,7 +666,6 @@ Property    | Value
 ----------- | -------
 api-key | **API_KEY**
 property-id | **PROPERTY_ID**
-Content-Type | application/json
 
 
 
@@ -624,13 +690,13 @@ Content-Type | application/json
 }
 ```
 
-Disable a service for a property.
+Disable a service associated to a property.
 
 **Request**
 
 Property | Value
 -------- | -------
-Endpoint | /service/disable/serviceId/:serviceId
+Endpoint | /service/disable/serviceId/**SERVICE_ID**
 Method   | POST
 
 **Request Headers**
@@ -639,4 +705,3 @@ Property    | Value
 ----------- | -------
 api-key | **API_KEY**
 property-id | **PROPERTY_ID**
-Content-Type | application/json
