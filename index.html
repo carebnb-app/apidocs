@@ -517,6 +517,64 @@
 
           </li>
           <li>
+            <a href="#custom-access-codes" class="toc-h1 toc-link" data-title="Custom access codes">Custom access codes</a>
+
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#user-39-s-smartock-account" class="toc-h2 toc-link" data-title="User's smartock account">User's smartock account</a>
+
+                      <ul class="toc-list-h2">
+                          <li>
+                            <a href="#get-all-logins" class="toc-h3 toc-link" data-title="Get all logins">Get all logins</a>
+                          </li>
+                          <li>
+                            <a href="#connect-login" class="toc-h3 toc-link" data-title="Connect login">Connect login</a>
+                          </li>
+                          <li>
+                            <a href="#disconnect-login" class="toc-h3 toc-link" data-title="Disconnect login">Disconnect login</a>
+                          </li>
+                          <li>
+                            <a href="#get-all-locks" class="toc-h3 toc-link" data-title="Get all locks">Get all locks</a>
+                          </li>
+                      </ul>
+
+                  </li>
+                  <li>
+                    <a href="#link-with-carebnb" class="toc-h2 toc-link" data-title="Link with Carebnb">Link with Carebnb</a>
+
+                      <ul class="toc-list-h2">
+                          <li>
+                            <a href="#get-all-locks-2" class="toc-h3 toc-link" data-title="Get all locks">Get all locks</a>
+                          </li>
+                          <li>
+                            <a href="#link-locks-with-property" class="toc-h3 toc-link" data-title="Link locks with property">Link locks with property</a>
+                          </li>
+                          <li>
+                            <a href="#unlink-lock-from-property" class="toc-h3 toc-link" data-title="Unlink lock from property">Unlink lock from property</a>
+                          </li>
+                      </ul>
+
+                  </li>
+                  <li>
+                    <a href="#temp-codes" class="toc-h2 toc-link" data-title="Temp codes">Temp codes</a>
+
+                      <ul class="toc-list-h2">
+                          <li>
+                            <a href="#get-all-9" class="toc-h3 toc-link" data-title="Get all">Get all</a>
+                          </li>
+                          <li>
+                            <a href="#create-7" class="toc-h3 toc-link" data-title="Create">Create</a>
+                          </li>
+                          <li>
+                            <a href="#update-9" class="toc-h3 toc-link" data-title="Update">Update</a>
+                          </li>
+                      </ul>
+
+                  </li>
+              </ul>
+
+          </li>
+          <li>
             <a href="#smart-info-board" class="toc-h1 toc-link" data-title="Smart info board">Smart info board</a>
 
               <ul class="toc-list-h2">
@@ -528,7 +586,7 @@
                             <a href="#get-5" class="toc-h3 toc-link" data-title="Get">Get</a>
                           </li>
                           <li>
-                            <a href="#update-9" class="toc-h3 toc-link" data-title="Update">Update</a>
+                            <a href="#update-10" class="toc-h3 toc-link" data-title="Update">Update</a>
                           </li>
                       </ul>
 
@@ -538,13 +596,13 @@
 
                       <ul class="toc-list-h2">
                           <li>
-                            <a href="#get-all-9" class="toc-h3 toc-link" data-title="Get all">Get all</a>
+                            <a href="#get-all-10" class="toc-h3 toc-link" data-title="Get all">Get all</a>
                           </li>
                           <li>
-                            <a href="#create-7" class="toc-h3 toc-link" data-title="Create">Create</a>
+                            <a href="#create-8" class="toc-h3 toc-link" data-title="Create">Create</a>
                           </li>
                           <li>
-                            <a href="#update-10" class="toc-h3 toc-link" data-title="Update">Update</a>
+                            <a href="#update-11" class="toc-h3 toc-link" data-title="Update">Update</a>
                           </li>
                           <li>
                             <a href="#delete-7" class="toc-h3 toc-link" data-title="Delete">Delete</a>
@@ -557,13 +615,13 @@
 
                       <ul class="toc-list-h2">
                           <li>
-                            <a href="#get-all-10" class="toc-h3 toc-link" data-title="Get all">Get all</a>
+                            <a href="#get-all-11" class="toc-h3 toc-link" data-title="Get all">Get all</a>
                           </li>
                           <li>
-                            <a href="#create-8" class="toc-h3 toc-link" data-title="Create">Create</a>
+                            <a href="#create-9" class="toc-h3 toc-link" data-title="Create">Create</a>
                           </li>
                           <li>
-                            <a href="#update-11" class="toc-h3 toc-link" data-title="Update">Update</a>
+                            <a href="#update-12" class="toc-h3 toc-link" data-title="Update">Update</a>
                           </li>
                           <li>
                             <a href="#delete-8" class="toc-h3 toc-link" data-title="Delete">Delete</a>
@@ -2452,7 +2510,7 @@ This type of message is sent to guests based on check in check out date.</p>
 </tr>
 <tr>
 <td>RULE</td>
-<td>A list of all rules is retrieved by &quot;Get all&quot; in &quot;House rules&quot; section</td>
+<td>A rule per se. A complete list of rules is retrieved by &quot;Get all&quot; in &quot;House rules&quot; sub-section</td>
 </tr>
 <tr>
 <td>RULE_ANSWER</td>
@@ -3146,6 +3204,727 @@ This type of message is sent to guests based on check in check out date.</p>
 <td><strong>PROPERTY_ID</strong></td>
 </tr>
 </tbody></table>
+<h1 id='custom-access-codes'>Custom access codes</h1>
+<p>Fully automated Airbnb smartlock management!</p>
+
+<p>Carebnb detects your reservations and automatically creates temporary and secure access codes with your Reagle™ smartlock.</p>
+
+<p>Automatically secured access codes
+<a href="https://carebnb.app/services/custom-access-codes/">know more</a></p>
+
+<p><strong>Base URL</strong></p>
+
+<p><code>https://api.smartlocks.carebnb.app/v1</code></p>
+
+<p><strong>Request / response properties</strong></p>
+
+<p>Some properties expect a pre defined value.</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>API_KEY</td>
+<td>An exclusive API key generated for each partner</td>
+</tr>
+<tr>
+<td>PROPERTY_ID</td>
+<td>The property ID registered on Carebnb</td>
+</tr>
+<tr>
+<td>USER_ID</td>
+<td>The user ID registered on Carebnb. Normally is a host</td>
+</tr>
+<tr>
+<td>BRAND_NAME</td>
+<td>The expected value for the brand is &quot;reagle&quot;</td>
+</tr>
+</tbody></table>
+<h2 id='user-39-s-smartock-account'>User&#39;s smartock account</h2>
+<p>First step is to connect the user&#39;s smartlock account with Carebnb system.
+To do it, the user must inform his smartlock login.</p>
+
+<p>After loging in, a list of locks assiciated to the smartlock account can be retrieved.</p>
+<h3 id='get-all-logins'>Get all logins</h3>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reagle"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"userLogin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user.reagle@gmail.com"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Returns all smartlock logins for a given user, associated or not to his properties.</p>
+
+<p><strong>Request</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Endpoint</td>
+<td>/locks/logins</td>
+</tr>
+<tr>
+<td>Method</td>
+<td>GET</td>
+</tr>
+</tbody></table>
+
+<p><strong>Request Headers</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api-key</td>
+<td><strong>API_KEY</strong></td>
+</tr>
+<tr>
+<td>user-id</td>
+<td><strong>USER_ID</strong></td>
+</tr>
+</tbody></table>
+<h3 id='connect-login'>Connect login</h3>
+<blockquote>
+<p>Request body</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reagle"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user.reagle@gmail.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b610958a4e630f753b62e"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"locks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"carebnbUserId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"79d76f9b-5a2e-4933-8741-ad7bb09bc85a"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10001001202039573056453031304758"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reagle"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Front Door"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"locked"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"batteryLevel"</span><span class="p">:</span><span class="w"> </span><span class="mi">87</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Connects an smartlock account to a Carebnb account.
+Also returns all smartlocks associated with informed account.</p>
+
+<p><strong>Request</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Endpoint</td>
+<td>/lock/login</td>
+</tr>
+<tr>
+<td>Method</td>
+<td>POST</td>
+</tr>
+</tbody></table>
+
+<p><strong>Request object parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>param</th>
+<th>type</th>
+<th>description</th>
+<th>required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>brand</td>
+<td>String</td>
+<td>The value for the brand is &quot;reagle&quot;</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>email</td>
+<td>String</td>
+<td>Account&#39;s e-mail</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>password</td>
+<td>String</td>
+<td>Account&#39;s password</td>
+<td>yes</td>
+</tr>
+</tbody></table>
+
+<p><strong>Request Headers</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api-key</td>
+<td><strong>API_KEY</strong></td>
+</tr>
+<tr>
+<td>user-id</td>
+<td><strong>USER_ID</strong></td>
+</tr>
+</tbody></table>
+<h3 id='disconnect-login'>Disconnect login</h3>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Disconnects smartlock account from Carebnb account.</p>
+
+<aside class="warning">
+  This action is final. After disconnecting, all data associated to a smartlock will be permanently deleted.
+</aside>
+
+<p><strong>Request</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Endpoint</td>
+<td>/lock/login/brand/<strong>BRAND_NAME</strong></td>
+</tr>
+<tr>
+<td>Method</td>
+<td>DELETE</td>
+</tr>
+</tbody></table>
+
+<p><strong>Request Headers</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api-key</td>
+<td><strong>API_KEY</strong></td>
+</tr>
+<tr>
+<td>user-id</td>
+<td><strong>USER_ID</strong></td>
+</tr>
+</tbody></table>
+<h3 id='get-all-locks'>Get all locks</h3>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reagle"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"locked"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"carebnbUserId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"79d76f9b-5a2e-4933-8741-ad7bb09bc25d"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"deviceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10001001202039573056453031303433"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Front Door"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"batteryLevel"</span><span class="p">:</span><span class="w"> </span><span class="mi">87</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Returns all smartlocks associated to a Carebnb user account.</p>
+
+<p><strong>Request</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Endpoint</td>
+<td>/locks/brand/<strong>BRAND_NAME</strong></td>
+</tr>
+<tr>
+<td>Method</td>
+<td>GET</td>
+</tr>
+</tbody></table>
+
+<p><strong>Request Headers</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api-key</td>
+<td><strong>API_KEY</strong></td>
+</tr>
+<tr>
+<td>user-id</td>
+<td><strong>USER_ID</strong></td>
+</tr>
+</tbody></table>
+<h2 id='link-with-carebnb'>Link with Carebnb</h2>
+<p>This section is related to the smartlocks retrieved after associating the user&#39;s smartlock account with his Carebnb account.</p>
+
+<p>Now our API has the hability to link smartlocks with properties.</p>
+<h3 id='get-all-locks-2'>Get all locks</h3>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reagle"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"locked"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"carebnbUserId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"79d76f9b-5a2e-4933-8741-ad7bb09bc25d"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"deviceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10001001202039573056425874103433"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Front Door"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"batteryLevel"</span><span class="p">:</span><span class="w"> </span><span class="mi">87</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"carebnbPropertyId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"735c17b9-d8a2-47b2-b957-52f1ead740db"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Returns all locks for a given property.</p>
+
+<p><strong>Request</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Endpoint</td>
+<td>/property/locks</td>
+</tr>
+<tr>
+<td>Method</td>
+<td>GET</td>
+</tr>
+</tbody></table>
+
+<p><strong>Request Headers</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api-key</td>
+<td><strong>API_KEY</strong></td>
+</tr>
+<tr>
+<td>user-id</td>
+<td><strong>USER_ID</strong></td>
+</tr>
+<tr>
+<td>property-id</td>
+<td><strong>PROPERTY_ID</strong></td>
+</tr>
+</tbody></table>
+<h3 id='link-locks-with-property'>Link locks with property</h3>
+<blockquote>
+<p>Request body</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"locks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"deviceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100010012020395730564535252543433"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reagle"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"locks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"carebnbUserId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"79d76f9b-5a2e-4933-8741-ad7bb09bc85a"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10001001202039573056453031304758"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reagle"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Front Door"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"locked"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"batteryLevel"</span><span class="p">:</span><span class="w"> </span><span class="mi">87</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Link locks (yes, can be many) with a property.</p>
+
+<p>A list of locks can be passed to be linked.</p>
+
+<p><strong>Request</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Endpoint</td>
+<td>/property/locks</td>
+</tr>
+<tr>
+<td>Method</td>
+<td>POST</td>
+</tr>
+</tbody></table>
+
+<p><strong>Request Headers</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api-key</td>
+<td><strong>API_KEY</strong></td>
+</tr>
+<tr>
+<td>user-id</td>
+<td><strong>USER_ID</strong></td>
+</tr>
+<tr>
+<td>property-id</td>
+<td><strong>PROPERTY_ID</strong></td>
+</tr>
+</tbody></table>
+<h3 id='unlink-lock-from-property'>Unlink lock from property</h3>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Unlink a lock from a given property.</p>
+
+<p><strong>Request</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Endpoint</td>
+<td>/property/lock/deviceId/<strong>DEVICE_ID</strong></td>
+</tr>
+<tr>
+<td>Method</td>
+<td>PUT</td>
+</tr>
+</tbody></table>
+
+<p><strong>Request Headers</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api-key</td>
+<td><strong>API_KEY</strong></td>
+</tr>
+<tr>
+<td>user-id</td>
+<td><strong>USER_ID</strong></td>
+</tr>
+<tr>
+<td>property-id</td>
+<td><strong>PROPERTY_ID</strong></td>
+</tr>
+</tbody></table>
+<h2 id='temp-codes'>Temp codes</h2>
+<p>These are the temporary access codes generated directly with real smartlocks.</p>
+<h3 id='get-all-9'>Get all</h3>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"codeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"970"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"75011031"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Airbnb - Brittany"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isActive"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"reservationCode"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-13 16:00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"endDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-16 11:00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isAutoGenerated"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Returns all temp codes for a given lock.</p>
+
+<p><strong>Request</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Endpoint</td>
+<td>/lock/tempCodes/deviceId/<strong>DEVICE_ID</strong></td>
+</tr>
+<tr>
+<td>Method</td>
+<td>GET</td>
+</tr>
+</tbody></table>
+
+<p><strong>Request Headers</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api-key</td>
+<td><strong>API_KEY</strong></td>
+</tr>
+<tr>
+<td>user-id</td>
+<td><strong>USER_ID</strong></td>
+</tr>
+</tbody></table>
+<h3 id='create-7'>Create</h3>
+<blockquote>
+<p>Request body</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reagle"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"deviceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100010012020395774566453031374433"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My temp code"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-25 08:00:00"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"endDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-06-30 15:00:00"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"codeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">487</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">597445</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My temp code"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isActive"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-25 08:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"endDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30 15:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isAutoGenerated"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Create a new temp code for a given lock.</p>
+
+<p>The start date cannot be less than today and the end date cannot be less than the start date.</p>
+
+<p><strong>Request</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Endpoint</td>
+<td>/lock/tempCode</td>
+</tr>
+<tr>
+<td>Method</td>
+<td>POST</td>
+</tr>
+</tbody></table>
+
+<p><strong>Request object params</strong></p>
+
+<table><thead>
+<tr>
+<th>param</th>
+<th>type</th>
+<th>description</th>
+<th>required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>brand</td>
+<td>String</td>
+<td>The value for the brand is &quot;reagle&quot;</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>deviceId</td>
+<td>String</td>
+<td>Unique identifier for a lock</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>Temp code&#39;s name</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>startDate</td>
+<td>Date</td>
+<td><a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>. Example: yyyy-mm-dd HH:mm:ss</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>endDate</td>
+<td>Date</td>
+<td><a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>. Example: yyyy-mm-dd HH:mm:ss</td>
+<td>yes</td>
+</tr>
+</tbody></table>
+
+<p><strong>Request Headers</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api-key</td>
+<td><strong>API_KEY</strong></td>
+</tr>
+<tr>
+<td>user-id</td>
+<td><strong>USER_ID</strong></td>
+</tr>
+</tbody></table>
+<h3 id='update-9'>Update</h3>
+<blockquote>
+<p>Request body</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reagle"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"deviceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10001001202039573056453031303433"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My temp code"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isActive"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isAutoGenerated"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"reservationCode"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"codeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">383</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">841256</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"carebnb"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isActive"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2000-01-01 02:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"endDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2000-01-01 02:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isAutoGenerated"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"reservationCode"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Update a temp code for a given lock.</p>
+
+<p><strong>Request</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Endpoint</td>
+<td>/lock/tempCode/tempCodeId/<strong>TEMP_CODE_ID</strong></td>
+</tr>
+<tr>
+<td>Method</td>
+<td>PUT</td>
+</tr>
+</tbody></table>
+
+<p><strong>Request Headers</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api-key</td>
+<td><strong>API_KEY</strong></td>
+</tr>
+<tr>
+<td>user-id</td>
+<td><strong>USER_ID</strong></td>
+</tr>
+</tbody></table>
 <h1 id='smart-info-board'>Smart info board</h1>
 <p>Carebnb displays personalized messages straight through our smart info board.</p>
 
@@ -3270,7 +4049,7 @@ This is the message sent to guests at the moment a new reservation is detected</
 <td><strong>PROPERTY_ID</strong></td>
 </tr>
 </tbody></table>
-<h3 id='update-9'>Update</h3>
+<h3 id='update-10'>Update</h3>
 <blockquote>
 <p>Request body</p>
 </blockquote>
@@ -3335,7 +4114,7 @@ This is the message sent to guests at the moment a new reservation is detected</
 </tbody></table>
 
 <p>This type of message can&#39;t be deleted.</p>
-<h2 id='scheduled-messages-2'>Scheduled messages</h2><h3 id='get-all-9'>Get all</h3>
+<h2 id='scheduled-messages-2'>Scheduled messages</h2><h3 id='get-all-10'>Get all</h3>
 <blockquote>
 <p>Response</p>
 </blockquote>
@@ -3401,7 +4180,7 @@ The returned messages are the ones sent to guests based on the day of the week.<
 <td><strong>PROPERTY_ID</strong></td>
 </tr>
 </tbody></table>
-<h3 id='create-7'>Create</h3>
+<h3 id='create-8'>Create</h3>
 <blockquote>
 <p>Request body</p>
 </blockquote>
@@ -3467,7 +4246,7 @@ This type of message is sent to guests based on the day of the week.</p>
 <td><strong>PROPERTY_ID</strong></td>
 </tr>
 </tbody></table>
-<h3 id='update-10'>Update</h3>
+<h3 id='update-11'>Update</h3>
 <blockquote>
 <p>Request body</p>
 </blockquote>
@@ -3596,7 +4375,7 @@ This type of message is sent to guests based on the day of the week.</p>
 <td><strong>PROPERTY_ID</strong></td>
 </tr>
 </tbody></table>
-<h2 id='check-in-check-out-messages-2'>Check in check out messages</h2><h3 id='get-all-10'>Get all</h3>
+<h2 id='check-in-check-out-messages-2'>Check in check out messages</h2><h3 id='get-all-11'>Get all</h3>
 <blockquote>
 <p>Response</p>
 </blockquote>
@@ -3655,7 +4434,7 @@ The returned messages are the ones sent to guests based on check in check out da
 <td><strong>PROPERTY_ID</strong></td>
 </tr>
 </tbody></table>
-<h3 id='create-8'>Create</h3>
+<h3 id='create-9'>Create</h3>
 <blockquote>
 <p>Request body</p>
 </blockquote>
@@ -3714,7 +4493,7 @@ This type of message is sent to guests based on check in check out date.</p>
 <td><strong>PROPERTY_ID</strong></td>
 </tr>
 </tbody></table>
-<h3 id='update-11'>Update</h3>
+<h3 id='update-12'>Update</h3>
 <blockquote>
 <p>Request body</p>
 </blockquote>
