@@ -22,7 +22,12 @@ Some properties expect a pre defined value.
 | USER_ID     | The user ID registered on Carebnb. Normally is a host |
 | BRAND_NAME  | The expected value for the brand is "reagle"          |
 
-## Connect lock account
+## User's smartock account
+
+First step is to connect the user's smartlock account with Carebnb system.
+To do it, the user must inform his smartlock login.
+
+After loging in, a list of locks assiciated to the smartlock account can be retrieved.
 
 ### Get all logins
 
@@ -40,7 +45,7 @@ Some properties expect a pre defined value.
 }
 ```
 
-Returns all logins for a given user.
+Returns all smartlock logins for a given user, associated or not to his properties.
 
 **Request**
 
@@ -88,7 +93,8 @@ Returns all logins for a given user.
 }
 ```
 
-Connects the user's lock account and return all locks for this login.
+Connects an smartlock account to a Carebnb account.
+Also returns all smartlocks associated with informed account.
 
 **Request**
 
@@ -122,7 +128,11 @@ Connects the user's lock account and return all locks for this login.
 }
 ```
 
-Disconnect login for a given user and brand.
+Disconnects smartlock account from Carebnb account.
+
+<aside class="warning">
+  This action is final. After disconnecting, all data associated to a smartlock will be permanently deleted.
+</aside>
 
 **Request**
 
@@ -158,7 +168,7 @@ Disconnect login for a given user and brand.
 }
 ```
 
-Returns all locks for a given user login and brand.
+Returns all smartlocks associated to a Carebnb user account.
 
 **Request**
 
@@ -174,7 +184,11 @@ Returns all locks for a given user login and brand.
 | api-key  | **API_KEY** |
 | user-id  | **USER_ID** |
 
-## Property locks
+## Link with Carebnb
+
+This section is related to the smartlocks retrieved after associating the user's smartlock account with his Carebnb account.
+
+Now our API has the hability to link smartlocks with properties.
 
 ### Get all locks
 
@@ -214,7 +228,7 @@ Returns all locks for a given property.
 | user-id     | **USER_ID**     |
 | property-id | **PROPERTY_ID** |
 
-### Link locks
+### Link locks with property
 
 > Request body
 
@@ -249,7 +263,7 @@ Returns all locks for a given property.
 }
 ```
 
-Link locks to a given property.
+Link locks (yes, can be many) with a property.
 
 A list of locks can be passed to be linked.
 
@@ -268,7 +282,7 @@ A list of locks can be passed to be linked.
 | user-id     | **USER_ID**     |
 | property-id | **PROPERTY_ID** |
 
-### Unlink lock
+### Unlink lock from property
 
 > Response
 
@@ -278,7 +292,7 @@ A list of locks can be passed to be linked.
 }
 ```
 
-Unlink lock to a given property.
+Unlink a lock from a given property.
 
 **Request**
 
@@ -296,6 +310,8 @@ Unlink lock to a given property.
 | property-id | **PROPERTY_ID** |
 
 ## Temp codes
+
+These are the temporary access codes generated directly with real smartlocks.
 
 ### Get all
 

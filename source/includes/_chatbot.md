@@ -17,7 +17,7 @@ Property | Description
 -------- | -------
 API_KEY | An exclusive API key generated for each partner
 PROPERTY_ID | The property ID registered on Carebnb
-RULE | A list of all rules is retrieved by "Get all" in "House rules" section
+RULE | A rule per se. A complete list of rules is retrieved by "Get all" in "House rules" sub-section
 RULE_ANSWER | "no", "yes" or "maybe"
 
 
