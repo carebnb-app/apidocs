@@ -20,7 +20,7 @@ Some properties expect a pre defined value.
 | API_KEY     | An exclusive API key generated for each partner       |
 | PROPERTY_ID | The property ID registered on Carebnb                 |
 | USER_ID     | The user ID registered on Carebnb. Normally is a host |
-| BRAND       | The expected value for the brand is "reagle"          |
+| BRAND_NAME  | The expected value for the brand is "reagle"          |
 
 ## Connect lock account
 
@@ -44,10 +44,10 @@ Returns all logins for a given user.
 
 **Request**
 
-| Property | Value        |
-| -------- | ------------ |
-| Endpoint | /user/logins |
-| Method   | GET          |
+| Property | Value         |
+| -------- | ------------- |
+| Endpoint | /locks/logins |
+| Method   | GET           |
 
 **Request Headers**
 
@@ -94,8 +94,16 @@ Connects the user's lock account and return all locks for this login.
 
 | Property | Value       |
 | -------- | ----------- |
-| Endpoint | /user/login |
+| Endpoint | /lock/login |
 | Method   | POST        |
+
+**Request object parameters**
+
+| param    | type   | description                         | required? |
+| -------- | ------ | ----------------------------------- | --------- |
+| brand    | String | The value for the brand is "reagle" | yes       |
+| email    | String | Account's e-mail                    | yes       |
+| password | String | Account's password                  | yes       |
 
 **Request Headers**
 
@@ -105,14 +113,6 @@ Connects the user's lock account and return all locks for this login.
 | user-id  | **USER_ID** |
 
 ### Disconnect login
-
-> Request body
-
-```json
-{
-  "brand": "reagle"
-}
-```
 
 > Response
 
@@ -126,10 +126,10 @@ Disconnect login for a given user and brand.
 
 **Request**
 
-| Property | Value       |
-| -------- | ----------- |
-| Endpoint | /user/login |
-| Method   | DELETE      |
+| Property | Value                            |
+| -------- | -------------------------------- |
+| Endpoint | /lock/login/brand/**BRAND_NAME** |
+| Method   | DELETE                           |
 
 **Request Headers**
 
@@ -162,10 +162,10 @@ Returns all locks for a given user login and brand.
 
 **Request**
 
-| Property | Value                                 |
-| -------- | ------------------------------------- |
-| Endpoint | /locks/brand/brandName/**BRAND_NAME** |
-| Method   | GET                                   |
+| Property | Value                       |
+| -------- | --------------------------- |
+| Endpoint | /locks/brand/**BRAND_NAME** |
+| Method   | GET                         |
 
 **Request Headers**
 
@@ -250,6 +250,7 @@ Returns all locks for a given property.
 ```
 
 Link locks to a given property.
+
 A list of locks can be passed to be linked.
 
 **Request**
@@ -269,14 +270,6 @@ A list of locks can be passed to be linked.
 
 ### Unlink lock
 
-> Request body
-
-```json
-{
-  "deviceId": "100010012020395730564535252543433"
-}
-```
-
 > Response
 
 ```json
@@ -285,14 +278,14 @@ A list of locks can be passed to be linked.
 }
 ```
 
-Unlink lock to a given propery.
+Unlink lock to a given property.
 
 **Request**
 
-| Property | Value                             |
-| -------- | --------------------------------- |
-| Endpoint | /property/lock/lockId/**LOCK_ID** |
-| Method   | PUT                               |
+| Property | Value                                 |
+| -------- | ------------------------------------- |
+| Endpoint | /property/lock/deviceId/**DEVICE_ID** |
+| Method   | PUT                                   |
 
 **Request Headers**
 
@@ -330,10 +323,10 @@ Returns all temp codes for a given lock.
 
 **Request**
 
-| Property | Value           |
-| -------- | --------------- |
-| Endpoint | /lock/tempCodes |
-| Method   | GET             |
+| Property | Value                                  |
+| -------- | -------------------------------------- |
+| Endpoint | /lock/tempCodes/deviceId/**DEVICE_ID** |
+| Method   | GET                                    |
 
 **Request Headers**
 
@@ -383,6 +376,16 @@ The start date cannot be less than today and the end date cannot be less than th
 | -------- | -------------- |
 | Endpoint | /lock/tempCode |
 | Method   | POST           |
+
+**Request object params**
+
+| param     | type   | description                                                                                             | required? |
+| --------- | ------ | ------------------------------------------------------------------------------------------------------- | --------- |
+| brand     | String | The value for the brand is "reagle"                                                                     | yes       |
+| deviceId  | String | Unique identifier for a lock                                                                            | yes       |
+| name      | String | Temp code's name                                                                                        | yes       |
+| startDate | Date   | [ISO 8601 format](https://www.iso.org/iso-8601-date-and-time-format.html). Example: yyyy-mm-dd HH:mm:ss | yes       |
+| endDate   | Date   | [ISO 8601 format](https://www.iso.org/iso-8601-date-and-time-format.html). Example: yyyy-mm-dd HH:mm:ss | yes       |
 
 **Request Headers**
 
