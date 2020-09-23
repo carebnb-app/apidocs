@@ -16,6 +16,7 @@ Some properties expect a pre defined value.
 Property | Description
 -------- | -------
 API_KEY | An exclusive API key generated for each partner
+USER_ID | The user (host) ID registered on Carebnb
 PROPERTY_ID | The property ID registered on Carebnb
 RULE | A rule per se. A complete list of rules is retrieved by "Get all" in "House rules" sub-section
 RULE_ANSWER | "no", "yes" or "maybe"
@@ -59,6 +60,7 @@ Method   | GET
 Property    | Value
 ----------- | -------
 api-key     | **API_KEY**
+user-id     | **USER**
 property-id | **PROPERTY_ID**
 
 
@@ -111,6 +113,7 @@ Method   | POST
 Property    | Value
 ----------- | -------
 api-key     | **API_KEY**
+user-id     | **USER**
 property-id | **PROPERTY_ID**
 
 
@@ -160,6 +163,7 @@ Method   | PUT
 Property    | Value
 ----------- | -------
 api-key     | **API_KEY**
+user-id     | **USER**
 property-id | **PROPERTY_ID**
 
 
@@ -190,6 +194,7 @@ Method   | DELETE
 Property    | Value
 ----------- | -------
 api-key     | **API_KEY**
+user-id     | **USER**
 property-id | **PROPERTY_ID**
 
 
@@ -236,6 +241,7 @@ Method   | GET
 Property    | Value
 ----------- | -------
 api-key     | **API_KEY**
+user-id     | **USER**
 property-id | **PROPERTY_ID**
 
 
@@ -286,6 +292,7 @@ Method   | PUT
 Property    | Value
 ----------- | -------
 api-key     | **API_KEY**
+user-id     | **USER**
 property-id | **PROPERTY_ID**
 
 
@@ -327,6 +334,7 @@ Method   | GET
 Property    | Value
 ----------- | -------
 api-key     | **API_KEY**
+user-id     | **USER**
 property-id | **PROPERTY_ID**
 
 
@@ -384,6 +392,7 @@ Observation: The **distance** or **time** parameters must be in the request. But
 Property    | Value
 ----------- | -------
 api-key     | **API_KEY**
+user-id     | **USER**
 property-id | **PROPERTY_ID**
 
 
@@ -439,6 +448,7 @@ Observation: The **distance** or **time** parameters must be in the request. But
 Property    | Value
 ----------- | -------
 api-key     | **API_KEY**
+user-id     | **USER**
 property-id | **PROPERTY_ID**
 
 
@@ -468,4 +478,5 @@ Method   | DELETE
 Property    | Value
 ----------- | -------
 api-key     | **API_KEY**
+user-id     | **USER**
 property-id | **PROPERTY_ID**
