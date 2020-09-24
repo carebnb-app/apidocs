@@ -213,14 +213,33 @@ property-id | **PROPERTY_ID**
   "message": "Rules list",
   "data": [
     {
-      "ruleId": "63996a85-4bfe-4a37-bfb5-a1286b2ac...",
-      "name": "Pets?",
-      "answer": "no"
-    },
-    {
-      "ruleId": "3871f9a7-daf6-46cf-8486-0c82d1723...",
-      "name": "Can I smoke at home?",
-      "answer": "yes"
+      "ruleId": "pets",
+      "title": "Pets",
+      "answer": "maybe",
+      "questions": [
+        "Are pets allowed?",
+        ...
+      ],
+      "answers": {
+        "positive": "Absolutelly, pets are welcome.",
+        "negative": "Sorry, pets are not allowed.",
+        "maybe": "Pets are welcome in certain cases."
+      },
+      "subRules": [
+        {
+          "ruleId": "serviceDogs",
+          "title": "Service dogs",
+          "answer": null,
+          "questions": [
+            "Can I take my assistance dog with me?",
+            ...
+          ],
+          "positive": "Yes, we are okay with service / assitance dogs.",
+          "negative": "Sorry, service / assistance dogs are not allowed.",
+          "maybe": "Service / assitance dogs are welcome in certain cases."
+        },
+        ...
+      ]
     },
     ...
   ]
@@ -257,9 +276,18 @@ property-id | **PROPERTY_ID**
   "statusCode": 200,
   "message": "Rule updated",
   "data": {
-    "ruleId": "63996a85-4bfe-4a37-bfb5-a1286b2ac...",
-    "name": "Pets?",
-    "answer": "no"
+    "ruleId": "pets",
+    "title": "Pets",
+    "questions": [
+      "Are pets allowed?",
+      ...
+    ],
+    "answers": {
+      "positive": "Absolutelly, pets are welcome.",
+      "negative": "Sorry, pets are not allowed.",
+      "maybe": "Pets are welcome in certain cases. {hostName} will touch base with you on this."
+    },
+    "answer": "maybe"
   }
 }
 ```
@@ -273,6 +301,10 @@ property-id | **PROPERTY_ID**
 ```
 
 Updates a house rule for a given property.
+
+<aside class="notice">
+  Sub rules are not returned by this update end point.
+</aside>
 
 **Request**
 
